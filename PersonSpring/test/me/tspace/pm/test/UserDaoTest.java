@@ -53,4 +53,9 @@ public class UserDaoTest extends AbstractTestCase {
 		}
 	}
 	
+	//test github
+	@Test
+	public void test(){}
+	
+	
 }
