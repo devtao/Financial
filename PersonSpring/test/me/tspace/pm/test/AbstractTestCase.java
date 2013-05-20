@@ -20,7 +20,7 @@ public class AbstractTestCase extends AbstractTransactionalJUnit4SpringContextTe
 	@BeforeClass
     public  static void beforeClass(){
 		String dir = System.getProperty("user.dir");
-		String uri =dir+"/WebRoot/WEB-INF/classes/log4j.conf"; 
+		String uri =dir+"/build/classes/log4j.conf"; 
 		PropertyConfigurator.configure(uri); 
     }
 	

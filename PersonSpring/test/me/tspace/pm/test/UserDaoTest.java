@@ -33,7 +33,7 @@ public class UserDaoTest extends AbstractTestCase {
 	
 	@Test
 	public void getUserByID(){
-		User user = userDao.getUserByID(2);
+		User user = userDao.getUserByID(1);
 		System.out.println(user.getUserName());
 		assertNotNull(user);
 	}

@@ -17,30 +17,18 @@
         ">
 
 	<!-- 引入配置数据源配置文件 -->
-	<context:property-placeholder  location="classpath*:/database.properties" />
+	<!-- <context:property-placeholder  location="classpath*:/database.properties" /> -->
 	
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
-		destroy-method="close" 
-		lazy-init="false" 
-		 >
-		 <!-- 
-		 p:driverClassName="${dataSource.driverClassName}"
-		p:url="${dataSource.url}" 
-		p:username="${dataSource.username}"
-		p:password="${dataSource.password}" 
-		p:maxActive="${dataSource.maxActive}"
-		p:maxIdle="${dataSource.maxIdle}"
-		p:maxWait="${dataSource.maxWait}"
-		  -->
-		 <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-		 <property name="url" value="jdbc:mysql://localhost:3306/personspring?useUnicode=true"></property>
-		 <property name="username" value="root"></property>
-		 <!-- <property name="password" value="111111"></property>  -->
-		 <property name="password" value="111111"></property>
-		 <property name="maxActive" value="200"></property>
-		 <property name="maxIdle" value="50"></property>
-		 <property name="maxWait" value="10000"></property>
-		 </bean>
+   <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">  
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />  
+        <property name="url" value="jdbc:mysql://localhost:3306/mypm" />  
+        <property name="username" value="mypm" />  
+        <property name="password" value="111111" />  
+        <property name="maxActive" value="100" />  
+        <property name="maxIdle" value="5" />  
+        <property name="minEvictableIdleTimeMillis" value="300000" />  
+        <property name="timeBetweenEvictionRunsMillis" value="120000" />  
+    </bean>  
 		
 	<bean  class="org.springframework.jdbc.core.JdbcTemplate"   p:dataSource-ref="dataSource" />  
 
