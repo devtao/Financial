@@ -2,6 +2,21 @@ CRATE DATABASE PERSONSPRING;
 
 USE DATABASE PERSONSPRING;
 
+CREATE TABLE USER (
+	userID INT (20) NOT NULL AUTO_INCREMENT,
+	userName VARCHAR (50) DEFAULT NULL ,
+	password VARCHAR (50) DEFAULT NULL ,
+	realName VARCHAR(50) DEFAULT null ,
+	phoneNum VARCHAR(50) default null ,
+	birthday DATETIME DEFAULT NULL ,
+	registerDate DATETIME DEFAULT NULL ,
+	level int default null,
+	primary key(userID)
+) ENGINE = INNODB DEFAULT CHARSET = UTF8 ;
+
+insert into user(userName,password) values('lilei','111111');
+
+
 
 CREATE TABLE T_LOGIN (
 	LOGIN_ID INT (20) NOT NULL AUTO_INCREMENT,
