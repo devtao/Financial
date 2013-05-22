@@ -60,7 +60,7 @@
 		<session-timeout>10</session-timeout>
 	</session-config>
 
-	    <!-- Character Encoding filter 过滤乱码 -->  
+	    <!-- Character Encoding filter 利用Spring过滤乱码 -->  
         <filter>  
             <filter-name>encodingFilter</filter-name>  
             <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>  
