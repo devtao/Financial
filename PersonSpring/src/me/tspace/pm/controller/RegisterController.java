@@ -32,14 +32,12 @@ public class RegisterController {
 	public String initForm(ModelMap model){
 		User user = new User();
 		model.addAttribute("user",user);
-		//直接跳转到登陆界面
 		return "app/common/register"; 
 	}
 	
 	@RequestMapping(value="register.do",method=RequestMethod.POST)
 	protected String submit(@ModelAttribute("user") User user){
 		int userID = userService.register(user).getUserID();
-		//跳转到用户信息页面
 		return "redirect:profile.do?userID="+userID;
 		
 	}

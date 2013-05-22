@@ -13,15 +13,13 @@ import me.tspace.pm.model.User;
 public interface UserService {
 	
 	/**
-	 * 根据ID获取用户
 	 * @param userID
-	 * @return
+	 * @returns
 	 */
 	@Transactional(readOnly=true)
 	public User read(int userID);
 
 	/**
-	 * 根据username和password获取用户
 	 * @param userName
 	 * @param password
 	 * @return
