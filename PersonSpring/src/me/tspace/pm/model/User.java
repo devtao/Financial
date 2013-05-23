@@ -13,7 +13,6 @@ public class User {
 	private Date registerDate;
 	
 	public User() {
-		// TODO Auto-generated constructor stub
 	}
 	
 	public User(String userName,String password){

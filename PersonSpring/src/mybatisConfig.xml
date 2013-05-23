@@ -5,6 +5,6 @@
         <typeAlias alias="User" type="me.tspace.pm.model.User"/>  
     </typeAliases>  
     <mappers>  
-        <mapper resource="me/tspace/pm/dao/UserDao.xml" />  
+        <mapper resource="me/tspace/pm/mapper/UserDaoMapper.xml" />  
     </mappers>  
 </configuration>
