@@ -36,7 +36,7 @@ public class RegisterController {
 	}
 	
 	@RequestMapping(value="register.do",method=RequestMethod.POST)
-	protected String submit(@ModelAttribute("user") User user){
+	public String submit(@ModelAttribute("user") User user){
 		int userID = userService.register(user).getUserID();
 		return "redirect:profile.do?userID="+userID;
 		
