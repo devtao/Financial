@@ -6,9 +6,9 @@ import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import me.tspace.pm.dao.UserDao;
-import me.tspace.pm.model.User;
-import me.tspace.pm.service.UserService;
+import me.tspace.pm.dao.UserDaoTest;
+import me.tspace.pm.model.UserTest;
+import me.tspace.pm.service.UserServiceTest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,20 +32,20 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 public class UserController {
 	
 	@Autowired
-	private UserService userService;
+	private UserServiceTest userService;
 	@Autowired
-	private UserDao userDao;
+	private UserDaoTest userDao;
 	
 	@RequestMapping(value="login.do",method=RequestMethod.GET)
 	public String initLogin(ModelMap model){
-		User user = new User();
+		UserTest user = new UserTest();
 		model.addAttribute("user",user);
 		return "app/common/login";
 	}
 	
 	@RequestMapping(value="login.do",method=RequestMethod.POST)
-	public String login(@ModelAttribute("user") User user){
-		User u = userService.read(user.getUserName(),user.getPassword());
+	public String login(@ModelAttribute("user") UserTest user){
+		UserTest u = userService.read(user.getUserName(),user.getPassword());
 		if(u!=null){
 			return "redirect:profile.do?userID="+u.getUserID();
 		}else{

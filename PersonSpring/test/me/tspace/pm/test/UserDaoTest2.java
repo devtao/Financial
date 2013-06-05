@@ -5,19 +5,21 @@ import static org.junit.Assert.*;
 import java.util.Date;
 import java.util.List;
 
+import me.tspace.pm.model.UserTest;
+import me.tspace.pm.dao.UserDaoTest;
+
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import me.tspace.pm.dao.UserDao;
-import me.tspace.pm.model.User;
 
-public class UserDaoTest extends AbstractTestCase {
+public class UserDaoTest2 extends AbstractTestCase {
+	
 	@Autowired
-	UserDao userDao ;
+	UserDaoTest userDao;
 	
 	@Test
 	public void createTest(){
-		User user = new User();
+		UserTest user = new UserTest();
 		user.setUserName("a@gmail.com");
 		user.setBirthday(new Date());
 		user.setRealName("testname");
@@ -26,29 +28,29 @@ public class UserDaoTest extends AbstractTestCase {
 		user.setPassword("111111");
 		
 		userDao.create(user);
-		User u = userDao.getUserByName("a@gmail.com");
+		UserTest u = userDao.getUserByName("a@gmail.com");
 		
 		assertNotNull(u);
 	}
 	
 	@Test
 	public void getUserByID(){
-		User user = userDao.getUserByID(1);
+		UserTest user = userDao.getUserByID(1);
 		System.out.println(user.getUserName());
 		assertNotNull(user);
 	}
 	
 	@Test
 	public void getUserByNameTest(){
-		User user = userDao.getUserByName("lilei@gmail.com");
+		UserTest user = userDao.getUserByName("lilei@gmail.com");
 		System.out.println(user.getRealName());
 		assertNotNull(user);
 	}
 	
 	@Test
 	public void getAllUserTest(){
-		List<User> users = userDao.getAllUsers();
-		for(User u:users){
+		List<UserTest> users = userDao.getAllUsers();
+		for(UserTest u:users){
 			System.out.println(u.getUserName()+" pwd: "+u.getPassword()+" realName: "+u.getRealName());
 		}
 	}

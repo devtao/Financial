@@ -3,21 +3,21 @@ package me.tspace.pm.service;
 import org.springframework.dao.DataAccessException;
 import org.springframework.transaction.annotation.Transactional;
 
-import me.tspace.pm.model.User;
+import me.tspace.pm.model.UserTest;
 
 /**
  * 
  * @author dat mail:dev.tao@gmail.com
  *
  */
-public interface UserService {
+public interface UserServiceTest {
 	
 	/**
 	 * @param userID
 	 * @returns
 	 */
 	@Transactional(readOnly=true)
-	public User read(int userID);
+	public UserTest read(int userID);
 
 	/**
 	 * @param userName
@@ -25,8 +25,8 @@ public interface UserService {
 	 * @return
 	 */
 	@Transactional(readOnly=true)
-	public User read(String userName, String password);
+	public UserTest read(String userName, String password);
 	
 	@Transactional(readOnly=false,rollbackFor=DataAccessException.class)
-	public User register(User user);
+	public UserTest register(UserTest user);
 }

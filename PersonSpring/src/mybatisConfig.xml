@@ -19,10 +19,12 @@
     
     <typeAliases>  
         <typeAlias alias="User" type="me.tspace.pm.model.User"/>  
+        <typeAlias alias="Login" type="me.tspace.pm.model.Login"/>  
     </typeAliases>
       
     <mappers>  
-        <mapper resource="me/tspace/pm/mapper/UserDaoMapper.xml" />  
+        <mapper resource="me/tspace/pm/mapper/UserDaoMapperTest.xml" />  
+        <mapper resource="me/tspace/pm/mapper/LoginMapper.xml" />  
     </mappers>  
     
 </configuration>

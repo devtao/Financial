@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import me.tspace.pm.dao.UserDao;
-import me.tspace.pm.model.User;
-import me.tspace.pm.service.UserService;
+import me.tspace.pm.dao.UserDaoTest;
+import me.tspace.pm.model.UserTest;
+import me.tspace.pm.service.UserServiceTest;
 
 
 /**
@@ -17,20 +17,20 @@ import me.tspace.pm.service.UserService;
 
 @Service
 @Transactional
-public class UserServiceImpl implements UserService {
+public class UserServiceImplTest implements UserServiceTest {
 	
 	@Autowired
-	private UserDao userDao;
+	private UserDaoTest userDao;
 
 	@Override
-	public User read(int userID) {
-		User user = userDao.getUserByID(userID);
+	public UserTest read(int userID) {
+		UserTest user = userDao.getUserByID(userID);
 		return user;
 	}
 
 	@Override
-	public User read(String userName, String password) {
-		User user =userDao.getUserByName(userName);
+	public UserTest read(String userName, String password) {
+		UserTest user =userDao.getUserByName(userName);
 		if(user!=null&&!password.equals(user.getPassword())){
 			user = null;
 		}
@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User register(User user) {
+	public UserTest register(UserTest user) {
 		userDao.create(user);
 		return userDao.getUserByName(user.getUserName());
 	}

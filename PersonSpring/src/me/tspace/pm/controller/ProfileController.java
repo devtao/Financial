@@ -1,8 +1,8 @@
 package me.tspace.pm.controller;
 
-import me.tspace.pm.dao.UserDao;
-import me.tspace.pm.model.User;
-import me.tspace.pm.service.UserService;
+import me.tspace.pm.dao.UserDaoTest;
+import me.tspace.pm.model.UserTest;
+import me.tspace.pm.service.UserServiceTest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,11 +20,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class ProfileController {
 	@Autowired
-	private UserDao userDao;
+	private UserDaoTest userDao;
 	
 	@RequestMapping(value="/profile.do",method=RequestMethod.GET)
 	public String profile(@RequestParam("userID")int id ,ModelMap model){
-		User user = userDao.getUserByID(id);
+		UserTest user = userDao.getUserByID(id);
 		model.addAttribute("user", user);
 		return "app/common/profile";
 	}

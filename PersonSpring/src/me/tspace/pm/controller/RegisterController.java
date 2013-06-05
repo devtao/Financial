@@ -3,8 +3,8 @@ package me.tspace.pm.controller;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 
-import me.tspace.pm.model.User;
-import me.tspace.pm.service.UserService;
+import me.tspace.pm.model.UserTest;
+import me.tspace.pm.service.UserServiceTest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class RegisterController {
 	
 	@Autowired
-	private UserService userService;
+	private UserServiceTest userService;
 	
 	@InitBinder
 	public void initBinder(WebDataBinder binder){
@@ -30,13 +30,13 @@ public class RegisterController {
 	
 	@RequestMapping(value="register.do", method=RequestMethod.GET)
 	public String initForm(ModelMap model){
-		User user = new User();
+		UserTest user = new UserTest();
 		model.addAttribute("user",user);
 		return "app/common/register"; 
 	}
 	
 	@RequestMapping(value="register.do",method=RequestMethod.POST)
-	public String submit(@ModelAttribute("user") User user){
+	public String submit(@ModelAttribute("user") UserTest user){
 		int userID = userService.register(user).getUserID();
 		return "redirect:profile.do?userID="+userID;
 		

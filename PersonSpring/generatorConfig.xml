@@ -21,6 +21,6 @@
 		</javaClientGenerator>
 			
 		<table tableName="T_Login" domainObjectName="Login" />
-		
+		<table tableName="T_User" domainObjectName="User" />
 	</context>
 </generatorConfiguration>
