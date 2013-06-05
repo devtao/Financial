@@ -52,7 +52,7 @@
 	
 	<!-- 默认跳转 -->
 	<welcome-file-list>
-		<welcome-file>/welcome.jsp</welcome-file>
+		<welcome-file>/loginAndregister.jsp</welcome-file>
 	</welcome-file-list>
 	
 	<!-- session timeout setup, 10 mins -->
