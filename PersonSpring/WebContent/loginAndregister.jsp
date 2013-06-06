@@ -71,7 +71,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     <form:input path = "loginPwd"   id="password" name="password" required="required" type="password" placeholder="" /> 
                                 </p>
                                 <p class="keeplogin"> 
-									<form:checkbox path = "loginkeeping"  name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
+									<form:checkbox path = "loginkeeping"   name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
 									<form:label path = "loginkeeping"   for="loginkeeping">Keep me logged in</form:label>
 								</p>
                                 <p class="login button"> 
