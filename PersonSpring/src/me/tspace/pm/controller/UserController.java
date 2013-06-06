@@ -36,20 +36,20 @@ public class UserController {
 	@Autowired
 	private UserDaoTest userDao;
 	
-	@RequestMapping(value="login.do",method=RequestMethod.GET)
+	@RequestMapping(value="login1.do",method=RequestMethod.GET)
 	public String initLogin(ModelMap model){
 		UserTest user = new UserTest();
 		model.addAttribute("user",user);
 		return "app/common/login";
 	}
 	
-	@RequestMapping(value="login.do",method=RequestMethod.POST)
+	@RequestMapping(value="login1.do",method=RequestMethod.POST)
 	public String login(@ModelAttribute("user") UserTest user){
 		UserTest u = userService.read(user.getUserName(),user.getPassword());
 		if(u!=null){
 			return "redirect:profile.do?userID="+u.getUserID();
 		}else{
-			return "redirect:login.do";
+			return "redirect:login1.do";
 		}
 	}
 	

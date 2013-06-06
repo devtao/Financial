@@ -16,7 +16,7 @@ public interface LoginService {
 		 * @return
 		 */
 		@Transactional(readOnly=true)
-		public boolean checkLoginExists(Login login);
+		public Login checkLoginExists(Login login);
 		
 		/**
 		 * 注册新用户,同时创建user

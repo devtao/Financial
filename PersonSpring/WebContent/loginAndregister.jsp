@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/taglib.jsp"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -36,7 +37,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <a class="hiddenanchor" id="tologin"></a>
                     <div id="wrapper">
                         <div id="login" class="animate form">
-                            <form  action="mysuperscript.php" autocomplete="on"> 
+                    <!--         <form  action="mysuperscript.php" autocomplete="on"> 
                                 <h1>Log in</h1> 
                                 <p> 
                                     <label for="username" class="uname" data-icon="u" > Your email or username </label>
@@ -58,6 +59,34 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<a href="#toregister" class="to_register">Join us</a>
 								</p>
                             </form>
+ -->
+                            <form:form commandName="login">
+                            	<h1>Log in</h1> 
+                                <p> 
+                                    <form:label  path = "loginName" for="username" class="uname" data-icon="u" > Your email or username </form:label>
+                                    <form:input path = "loginName" id="username" name="username" required="required" type="text" placeholder="username or email all is ok !"/>
+                                </p>
+                                <p> 
+                                    <form:label path = "loginPwd"  for="password" class="youpasswd" data-icon="p"> Your password </form:label>
+                                    <form:input path = "loginPwd"   id="password" name="password" required="required" type="password" placeholder="" /> 
+                                </p>
+                                <p class="keeplogin"> 
+									<form:checkbox path = "loginkeeping"  name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
+									<form:label path = "loginkeeping"   for="loginkeeping">Keep me logged in</form:label>
+								</p>
+                                <p class="login button"> 
+                                    <input   type="submit" value="Login" /> 
+								</p>
+                                <p class="change_link">
+									Not a member yet ?
+									<a href="#toregister" class="to_register">Join us</a>
+								</p>
+                            </form:form>
+                            
+
+
+                            
+                            
                         </div>
 
                         <div id="register" class="animate form">

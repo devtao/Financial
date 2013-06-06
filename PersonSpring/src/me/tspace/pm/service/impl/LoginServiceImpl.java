@@ -24,25 +24,24 @@ public class LoginServiceImpl implements LoginService {
 	
 	@Override
 	@Transactional(readOnly=true)
-	public boolean checkLoginExists(Login login) {
+	public Login checkLoginExists(Login login) {
 		LoginExample example = new LoginExample();
 		List<Login> logins  = new ArrayList<Login>();
-		boolean flag = false;
 		if(login.getLoginName()!=null){
 			example.createCriteria().andLoginNameEqualTo(login.getLoginName());
 			logins = loginMapper.selectByExample(example);
 		}
-		if(login.getLoginEmail()!=null){
+		if(logins ==null){
 			example.clear();
-			example.createCriteria().andLoginEmailEqualTo(login.getLoginEmail());
+			example.createCriteria().andLoginEmailEqualTo(login.getLoginName());
 			logins = loginMapper.selectByExample(example);
 		}
 		for(Login lo:logins){
 			if(lo.getLoginPwd().equals(login.getLoginPwd())){
-				flag = true;
+				return lo;
 			}
 		}
-		return flag;
+		return null;
 	}
 
 	@Override

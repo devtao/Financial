@@ -1,5 +1,7 @@
 package me.tspace.pm.test;
 
+import java.util.Date;
+
 import junit.framework.Assert;
 
 import org.junit.Test;
@@ -20,7 +22,19 @@ public class LoginDaoTest extends AbstractTestCase{
 		l.setLoginEmail("lilei@gmail.com");
 		l.setLoginName("lilei");
 		l.setLoginPwd("111111");
-		boolean flag = loginService.checkLoginExists(l);
-		Assert.assertTrue(flag);
+		Login login = loginService.checkLoginExists(l);
+		Assert.assertNotNull(login);
 	}
+	
+	@Test
+	public void createLoginTest(){
+		Login l = new Login();
+		l.setLoginEmail("Lucy@gmail.com");
+		l.setLoginLastdate(new Date());
+		l.setLoginName("Lucy");
+		l.setLoginPwd("111111");
+		l = loginService.createLogin(l);
+		System.out.println(l.getLoginName());
+	}
+	
 }
