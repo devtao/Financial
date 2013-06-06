@@ -1,5 +1,8 @@
 package me.tspace.pm.service;
 
+import org.springframework.dao.DataAccessException;
+import org.springframework.transaction.annotation.Transactional;
+
 import me.tspace.pm.model.Login;
 /**
  * 
@@ -12,27 +15,15 @@ public interface LoginService {
 		 * @param login
 		 * @return
 		 */
+		@Transactional(readOnly=true)
 		public boolean checkLoginExists(Login login);
 		
 		/**
-		 * 注册新用户
+		 * 注册新用户,同时创建user
 		 * @param login
 		 * @return
 		 */
+		@Transactional(readOnly=false,rollbackFor=DataAccessException.class)
 		public Login createLogin(Login login);
-		
-		/**
-		 * 查询用户是否存在
-		 * @param name
-		 * @return
-		 */
-		public boolean checkExistWithName(String name);
-		
-		/**
-		 * 查询Email是否存在
-		 * @param email
-		 * @return
-		 */
-		public boolean checkExistWithEmail(String email);
 		
 }

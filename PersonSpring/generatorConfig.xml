@@ -5,7 +5,8 @@
 	<classPathEntry location="C:\mysql-connector-java-5.1.24-bin.jar" />
 	
 	<context id="context1" targetRuntime="MyBatis3">
-		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/mypm"  userId="mydev"	password="111111" />
+		 <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/mypm"  userId="mydev"	password="111111" /> 
+		<!-- <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.3.103/emailhunter?useUnicode=true&amp;characterEncoding=utf-8"  userId="root"	password="selleckemail2013" /> -->
 			
 		<javaModelGenerator targetPackage="me.tspace.pm.model" targetProject="PersonSpring\src" >
 			 <property name="enableSubPackages" value="false" />

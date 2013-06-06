@@ -4,19 +4,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import me.tspace.pm.dao.LoginMapper;
+import me.tspace.pm.dao.UserMapper;
 import me.tspace.pm.model.Login;
 import me.tspace.pm.model.LoginExample;
 import me.tspace.pm.service.LoginService;
+import me.tspace.pm.service.UserService;
 
 @Service
 public class LoginServiceImpl implements LoginService {
 	@Autowired
 	private LoginMapper loginMapper;
+	@Autowired
+	private UserService userService;
 	
 	@Override
+	@Transactional(readOnly=true)
 	public boolean checkLoginExists(Login login) {
 		LoginExample example = new LoginExample();
 		List<Login> logins  = new ArrayList<Login>();
@@ -24,7 +31,9 @@ public class LoginServiceImpl implements LoginService {
 		if(login.getLoginName()!=null){
 			example.createCriteria().andLoginNameEqualTo(login.getLoginName());
 			logins = loginMapper.selectByExample(example);
-		}else if(login.getLoginEmail()!=null){
+		}
+		if(login.getLoginEmail()!=null){
+			example.clear();
 			example.createCriteria().andLoginEmailEqualTo(login.getLoginEmail());
 			logins = loginMapper.selectByExample(example);
 		}
@@ -37,21 +46,11 @@ public class LoginServiceImpl implements LoginService {
 	}
 
 	@Override
+	@Transactional(readOnly=false , rollbackFor=DataAccessException.class)
 	public Login createLogin(Login login) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean checkExistWithName(String name) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean checkExistWithEmail(String email) {
-		// TODO Auto-generated method stub
-		return false;
+		loginMapper.insert(login);
+		userService.createCreate(login);
+		return login;
 	}
 
 }
