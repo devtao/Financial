@@ -21,8 +21,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <link rel="stylesheet" type="text/css" href="resources/css/demo.css" />
         <link rel="stylesheet" type="text/css" href="resources/css/style3.css" />
 		<link rel="stylesheet" type="text/css" href="resources/css/animate-custom.css" />
+		
+		<script type="text/javascript" language="javascript">
+				function openDiv()
+				{
+					 var loginId =  "${login.loginId}" ; 
+					 alert(loginId);
+					 if(loginId ==null ){
+						 document.getElementById("loginfail").style.visibility="visible";
+						 document.getElementById("loginfail").style.display="block";
+					} 
+				}
+				function closeDiv()
+				{
+						document.getElementById("loginfail").style.visibility="hidden";
+						document.getElementById("loginfail").style.display="none";
+				}
+	</script>
+		
+		
+		
     </head>
-    <body>
+    <body >
         <div class="container">
             <header>
                 <h1>Hey gay ! <span>welcome to da t.'s space</span></h1>
@@ -36,32 +56,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <a class="hiddenanchor" id="toregister"></a>
                     <a class="hiddenanchor" id="tologin"></a>
                     <div id="wrapper">
-                        <div id="login" class="animate form">
-                    <!--         <form  action="mysuperscript.php" autocomplete="on"> 
-                                <h1>Log in</h1> 
-                                <p> 
-                                    <label for="username" class="uname" data-icon="u" > Your email or username </label>
-                                    <input id="username" name="username" required="required" type="text" placeholder="username or email all is ok !"/>
-                                </p>
-                                <p> 
-                                    <label for="password" class="youpasswd" data-icon="p"> Your password </label>
-                                    <input id="password" name="password" required="required" type="password" placeholder="" /> 
-                                </p>
-                                <p class="keeplogin"> 
-									<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
-									<label for="loginkeeping">Keep me logged in</label>
-								</p>
-                                <p class="login button"> 
-                                    <input type="submit" value="Login" /> 
-								</p>
-                                <p class="change_link">
-									Not a member yet ?
-									<a href="#toregister" class="to_register">Join us</a>
-								</p>
-                            </form>
- -->
-                            <form:form commandName="login">
+                        <div id="loginin" class="animate form" >
+                             <form:form commandName="login">
                             	<h1>Log in</h1> 
+								<div  id="loginfail"  style="visibility:hidden ; display:none" class="codrops-demos">用户名或密码不对 请重新输入 !</div>
+								<form:hidden path="loginId" />
                                 <p> 
                                     <form:label  path = "loginName" for="username" class="uname" data-icon="u" > Your email or username </form:label>
                                     <form:input path = "loginName" id="username" name="username" required="required" type="text" placeholder="username or email all is ok !"/>
@@ -73,7 +72,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 <p class="keeplogin"> 
 									<form:checkbox path = "loginkeeping"   name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
 									<form:label path = "loginkeeping"   for="loginkeeping">Keep me logged in</form:label>
-								</p>
+								</p>  
                                 <p class="login button"> 
                                     <input   type="submit" value="Login" /> 
 								</p>
@@ -81,11 +80,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									Not a member yet ?
 									<a href="#toregister" class="to_register">Join us</a>
 								</p>
-                            </form:form>
-                            
-
-
-                            
+                            </form:form> 
                             
                         </div>
 

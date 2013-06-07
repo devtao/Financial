@@ -26,7 +26,7 @@ public class LoginController {
 	public String submit(@ModelAttribute("login") Login login){
 		Login loginin = loginService.checkLoginExists(login);
 		if(loginin!=null){
-			return "redirect:profile.do?userid="+loginin.getLoginId();
+			return "redirect:profile.do?userID="+loginin.getLoginId();
 		}else{
 			return "redirect:login.do";
 		}
