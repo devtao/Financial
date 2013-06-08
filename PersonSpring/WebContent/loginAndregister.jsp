@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page isELIgnored="false" %>
 <%@ include file="/WEB-INF/taglib.jsp"%>
 <%
 String path = request.getContextPath();
@@ -40,7 +41,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</script>
 		
 		
-		
     </head>
     <body >
         <div class="container">
@@ -59,6 +59,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         <div id="loginin" class="animate form" >
                              <form:form commandName="login">
                             	<h1>Log in</h1> 
+                            	<c:if test="${!empty errorMsg}">
+									<tr>
+										<td colspan="2">
+											<font color="red">${errorMsg}</font>
+										</td>
+									</tr>
+								 </c:if>
 								<div  id="loginfail"  style="visibility:hidden ; display:none" class="codrops-demos">用户名或密码不对 请重新输入 !</div>
 								<form:hidden path="loginId" />
                                 <p> 

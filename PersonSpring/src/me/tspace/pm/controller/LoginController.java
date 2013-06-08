@@ -3,15 +3,20 @@ package me.tspace.pm.controller;
 import me.tspace.pm.model.Login;
 import me.tspace.pm.service.LoginService;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class LoginController {
+	protected final Log logger = LogFactory.getLog(getClass());
+
 	@Autowired
 	private LoginService loginService;
 	
@@ -23,13 +28,17 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value = "login.do" ,method = RequestMethod.POST)
-	public String submit(@ModelAttribute("login") Login login){
+	public ModelAndView submit(@ModelAttribute("login") Login login){
+		logger.debug("注册......");
 		Login loginin = loginService.checkLoginExists(login);
+		ModelAndView mv = new ModelAndView();
 		if(loginin!=null){
-			return "redirect:profile.do?userID="+loginin.getLoginId();
+			mv.setViewName("redirect:profile.do?userID="+loginin.getLoginId());
 		}else{
-			return "redirect:login.do";
+			mv.addObject("errorMsg","用户名或密码不正确!");
+			mv.setViewName("redirect:login.do");
 		}
+		return mv;
 	}
 	
 	
