@@ -21,8 +21,8 @@
 			 <property name="enableSubPackages" value="false" />
 		</javaClientGenerator>
 			
-		<table tableName="T_Login" domainObjectName="Login" />
-		<table tableName="T_User" domainObjectName="User" /> 
-		
+		<!-- <table tableName="T_Login" domainObjectName="Login" />
+		<table tableName="T_User" domainObjectName="User" />  -->
+		<table tableName="record_task_assignment" domainObjectName="TaskAssignment" />
 	</context>
 </generatorConfiguration>
