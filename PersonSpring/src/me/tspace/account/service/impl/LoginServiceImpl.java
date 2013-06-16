@@ -30,7 +30,7 @@ public class LoginServiceImpl implements ILoginService {
 			example.createCriteria().andLoginNameEqualTo(login.getLoginName());
 			logins = loginMapper.selectByExample(example);
 		}
-		if(logins ==null){
+		if(logins.size()==0){
 			example.clear();
 			example.createCriteria().andLoginEmailEqualTo(login.getLoginName());
 			logins = loginMapper.selectByExample(example);

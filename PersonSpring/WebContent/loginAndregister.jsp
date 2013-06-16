@@ -1,5 +1,4 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ page isELIgnored="false" %>
 <%@ include file="/WEB-INF/taglib.jsp"%>
 <%
 String path = request.getContextPath();
@@ -22,24 +21,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <link rel="stylesheet" type="text/css" href="resources/css/demo.css" />
         <link rel="stylesheet" type="text/css" href="resources/css/style3.css" />
 		<link rel="stylesheet" type="text/css" href="resources/css/animate-custom.css" />
-		
-		<script type="text/javascript" language="javascript">
-				function openDiv()
-				{
-					 var loginId =  "${login.loginId}" ; 
-					 alert(loginId);
-					 if(loginId ==null ){
-						 document.getElementById("loginfail").style.visibility="visible";
-						 document.getElementById("loginfail").style.display="block";
-					} 
-				}
-				function closeDiv()
-				{
-						document.getElementById("loginfail").style.visibility="hidden";
-						document.getElementById("loginfail").style.display="none";
-				}
-	</script>
-		
 		
     </head>
     <body >
@@ -66,7 +47,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										</td>
 									</tr>
 								 </c:if>
-								<div  id="loginfail"  style="visibility:hidden ; display:none" class="codrops-demos">用户名或密码不对 请重新输入 !</div>
 								<form:hidden path="loginId" />
                                 <p> 
                                     <form:label  path = "loginName" for="username" class="uname" data-icon="u" > Your email or username </form:label>

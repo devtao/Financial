@@ -16,13 +16,13 @@
   <title>Theme by CssTemplateHeaven</title>
   
   <!-- Included CSS Files (Compressed) -->
-  <link rel="stylesheet" href="stylesheets/foundation.min.css">
-  <link rel="stylesheet" href="stylesheets/main.css">
-  <link rel="stylesheet" href="stylesheets/app.css">
+  <link rel="stylesheet" href="resources/home/stylesheets/foundation.min.css">
+  <link rel="stylesheet" href="resources/home/stylesheets/main.css">
+  <link rel="stylesheet" href="resources/home/stylesheets/app.css">
 
-  <script src="javascripts/modernizr.foundation.js"></script>
+  <script src="resources/home/javascripts/modernizr.foundation.js"></script>
   
-  <link rel="stylesheet" href="ligature.css">
+  <link rel="stylesheet" href="resources/home/stylesheets/ligature.css">
   
   <!-- Google fonts -->
   <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Playfair+Display:400italic' rel='stylesheet' type='text/css' />
@@ -121,27 +121,27 @@
       <h2>Latest Photos by Our Members</h2>
       
           <div class="two columns">
-          <a href="#" class="th"><img src="images/thumb1.jpg" width="100" height="100" alt="desc" /></a>
+          <a href="#" class="th"><img src="resources/home/images/thumb1.jpg" width="100" height="100" alt="desc" /></a>
           </div>
           
           <div class="two columns">
-          <a href="#" class="th"><img src="images/thumb2.jpg" width="100" height="100"  alt="desc" /></a>
+          <a href="#" class="th"><img src="resources/home/images/thumb2.jpg" width="100" height="100"  alt="desc" /></a>
           </div>
           
           <div class="two columns">
-          <a href="#" class="th"><img src="images/thumb3.jpg" width="100" height="100"  alt="desc" /></a>
+          <a href="#" class="th"><img src="resources/home/images/thumb3.jpg" width="100" height="100"  alt="desc" /></a>
           </div>
           
           <div class="two columns">
-          <a href="#" class="th"><img src="images/thumb4.jpg" width="100" height="100"  alt="desc" /></a>
+          <a href="#" class="th"><img src="resources/home/images/thumb4.jpg" width="100" height="100"  alt="desc" /></a>
           </div>
           
           <div class="two columns">
-          <a href="#" class="th"><img src="images/thumb5.jpg" width="100" height="100"  alt="desc" /></a>
+          <a href="#" class="th"><img src="resources/home/images/thumb5.jpg" width="100" height="100"  alt="desc" /></a>
           </div>
           
           <div class="two columns">
-          <a href="#" class="th"><img src="images/thumb6.jpg" width="100" height="100"  alt="desc" /></a>
+          <a href="#" class="th"><img src="resources/home/images/thumb6.jpg" width="100" height="100"  alt="desc" /></a>
           </div>
 
       
@@ -199,8 +199,8 @@
 <!-- ######################## Scripts ######################## --> 
 
     <!-- Included JS Files (Compressed) -->
-    <script src="javascripts/foundation.min.js" type="text/javascript"></script> 
+    <script src="resources/home/javascripts/foundation.min.js" type="text/javascript"></script> 
     <!-- Initialize JS Plugins -->
-     <script src="javascripts/app.js" type="text/javascript"></script>
+     <script src="resources/home/javascripts/app.js" type="text/javascript"></script>
 </body>
 </html>
