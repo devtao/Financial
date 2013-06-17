@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="resources/home/stylesheets/main.css">
   <link rel="stylesheet" href="resources/home/stylesheets/app.css">
 
-  <script src="resources/home/javascripts/modernizr.foundation.js"></script>
+   <script src="resources/home/javascripts/modernizr.foundation.js"></script>
   
   <link rel="stylesheet" href="resources/home/stylesheets/ligature.css">
   
@@ -59,8 +59,8 @@
             </ul> 
           </li><!-- END Flyout Menu -->
       
-          <li class=""><a href="galleries.html">Boxed Gallery</a></li>
-          <li class=""><a href="portfolio.html">Portfolio Gallery</a></li>
+          <li class=""><a href="finance.html">财务管理</a></li>
+          <li class=""><a href="portfolio.html"></a></li>
           <li class=""><a href="pinterest-style.html">Pinterest Gallery</a></li>
           <li class=""><a href="tiles.html">Tiles</a></li>
       
@@ -173,9 +173,7 @@
                   <a href="#" class="button secondary small radius">Learn More &raquo;</a>
                 </div>
           </article>
-  
       </div>
-      
       
 </section>
 
@@ -191,13 +189,9 @@
               <a href="http://csstemplateheaven.com/csstemplateheaven" class="lsf-icon" style="font-size:16px; margin-right:15px" title="pinterest">Pinterest</a>
               <a href="http://twitter.com/dieterarno" class="lsf-icon" style="font-size:16px" title="instagram">Instagram</a>
           </div>
-          
       </div>
-
-</footer>		  
-
+</footer>		 
 <!-- ######################## Scripts ######################## --> 
-
     <!-- Included JS Files (Compressed) -->
     <script src="resources/home/javascripts/foundation.min.js" type="text/javascript"></script> 
     <!-- Initialize JS Plugins -->

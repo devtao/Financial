@@ -14,9 +14,8 @@ public class HomeController {
 	
 	@RequestMapping(value="home.do",method=RequestMethod.GET)
 	public String home(@RequestParam("userID") int userID,ModelMap model){
-		logger.info("哈哈哈"+userID);
+		logger.info("跳转到首页"+userID);
 		return "home";
 	}
-	
 	
 }
