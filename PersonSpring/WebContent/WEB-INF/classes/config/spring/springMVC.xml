@@ -27,14 +27,10 @@
         <property name="timeBetweenEvictionRunsMillis" value="120000" />  
     </bean>  
 		
-	<bean  class="org.springframework.jdbc.core.JdbcTemplate"   p:dataSource-ref="dataSource" />  
-
-
 	<!-- 启动注解驱动的Spring MVC功能，注册请求url和注解POJO类方法的映射-->
      <mvc:annotation-driven />
 
 	<!-- 默认扫描的包路径 -->
-	<context:component-scan base-package="me.tspace.account.controller" />
 	<context:component-scan base-package="me.tspace.account.service.impl" />
 	<context:component-scan base-package="me.tspace.account.dao.impl" />
 

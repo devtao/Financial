@@ -1,2 +1,6 @@
 eclipse.preferences.version=1
+encoding//src/config/mybatis/jdbc.properties=UTF-8
+encoding//src/config/others/config.properties=UTF-8
+encoding//src/config/others/messages.properties=UTF-8
+encoding//src/config/others/messages_zh_CN.properties=UTF-8
 encoding/<project>=UTF-8

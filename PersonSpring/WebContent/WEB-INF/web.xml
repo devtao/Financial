@@ -12,29 +12,42 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"> 	
  	
  	
-	<display-name>ContentManagementSystem</display-name>
+	<display-name>大T的应用平台</display-name>
 	<!--
 		添加spring3控制器, DispatcherServletDispatcherServlet是Spring MVC 的入口
 		所有进入Spring Web的 Request都经过 DispatcherServlet
 	-->
-	<servlet>
-	<servlet-name>PersonalSpring</servlet-name>
-	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	 <context-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:/config/spring/spring-common.xml</param-value>
+		</context-param>
+		<listener>
+			<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+		</listener>
+		<servlet>
+			<servlet-name>SpringMVC</servlet-name>
+			<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+			<init-param>
+				<param-name>contextConfigLocation</param-name>
+				<param-value>classpath:/config/spring/springmvc-servlet.xml</param-value>
+			</init-param>
+			<load-on-startup>1</load-on-startup>
+		</servlet>
+		<servlet-mapping>
+			<servlet-name>SpringMVC</servlet-name>
+			<url-pattern>/</url-pattern>
+		</servlet-mapping>
 
-	<init-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath*:config/spring/springMVC.xml</param-value>
-	</init-param>
-	<load-on-startup>1</load-on-startup>
-	</servlet>
+		<servlet>
+			<servlet-name>AxisServlet</servlet-name>
+			<servlet-class>org.apache.axis2.transport.http.AxisServlet</servlet-class>
+			<load-on-startup>1</load-on-startup>
+		</servlet>
 	
-	
-	<!-- 配置spring3的映射规则 -->
-	<servlet-mapping>
-		<servlet-name>PersonalSpring</servlet-name>
-		  <!-- url配置为/，不带文件后缀，会造成其它静态文件(js，css等)不能访问。如配为*.do，则不影响静态文件的访问 -->
-		<url-pattern>*.do</url-pattern>
-	</servlet-mapping>
+		<servlet-mapping>
+			<servlet-name>AxisServlet</servlet-name>
+			<url-pattern>/services/*</url-pattern>
+		</servlet-mapping>
 	
 	
 	<!-- 配置log4j -->
@@ -66,7 +79,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 	
 	<!-- session timeout setup, 10 mins -->
 	<session-config>
-		<session-timeout>10</session-timeout>
+		<session-timeout>30</session-timeout>
 	</session-config>
 
 	    <!-- Character Encoding filter 利用Spring过滤乱码 -->  
@@ -88,6 +101,14 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
             <url-pattern>/*</url-pattern>  
         </filter-mapping>  
 	
+	<!-- 从selleck wms_v4 复制的两个lilstener，暂时不知道什么用 -->
+	<listener>
+		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener>
+	
 			<!--
 	<error-page>
 		<error-code>404</error-code>
@@ -108,5 +129,4 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 		<location>/WEB-INF/error/error.jsp</location>
 	</error-page>
 	-->
-	
 </web-app>  
