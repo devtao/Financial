@@ -38,7 +38,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 			<url-pattern>/</url-pattern>
 		</servlet-mapping>
 
-		<servlet>
+		<!-- <servlet>
 			<servlet-name>AxisServlet</servlet-name>
 			<servlet-class>org.apache.axis2.transport.http.AxisServlet</servlet-class>
 			<load-on-startup>1</load-on-startup>
@@ -47,7 +47,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 		<servlet-mapping>
 			<servlet-name>AxisServlet</servlet-name>
 			<url-pattern>/services/*</url-pattern>
-		</servlet-mapping>
+		</servlet-mapping> -->
 	
 	
 	<!-- 配置log4j -->
