@@ -71,7 +71,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"> <img alt="Charisma Logo" src="resources/img/logo20.png" /> <span>Charisma</span></a>
+				<a class="brand" href="index.html"> <img alt="Charisma Logo" src="resources/img/logo20.png" /> <span>大T的财管</span></a>
 				
 				<!-- theme selector starts -->
 				<div class="btn-group pull-right theme-container" >
