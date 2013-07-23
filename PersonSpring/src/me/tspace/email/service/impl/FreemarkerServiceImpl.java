@@ -38,8 +38,8 @@ public class FreemarkerServiceImpl implements IFreemarkerService{
         @SuppressWarnings("rawtypes")
 		Map map  = new HashMap();  
         map.put("content",content);  
-        map.put("subject", "主题");
-        map.put("fromAddress", "来自");
+        map.put("subject", "主题!!");
+        map.put("fromAddress", "来自我的测试");
         Template tpl    = null;  
         try {  
             tpl =  freeMarkerConfigurer.getConfiguration().getTemplate("reg.ftl");//加载资源文件  
