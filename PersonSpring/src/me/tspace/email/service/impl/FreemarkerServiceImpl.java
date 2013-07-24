@@ -1,7 +1,9 @@
 package me.tspace.email.service.impl;
 
 import java.io.IOException;  
+import java.util.ArrayList;
 import java.util.HashMap;  
+import java.util.List;
 import java.util.Map;  
   
 import javax.mail.MessagingException;  
@@ -37,12 +39,21 @@ public class FreemarkerServiceImpl implements IFreemarkerService{
         String htmlText = "";  
         @SuppressWarnings("rawtypes")
 		Map map  = new HashMap();  
-        map.put("content1",content);  
-        map.put("content2",content);  
-        map.put("content3",content);  
+        map.put("logo", "http://file.selleckchem.com/images/logo.gif");
+        map.put("banner", "http://www.selleckchem.com/newsletter-fodder/lib-gpcr-banner.png");
+        
+    	List<String> contents = new ArrayList<String>();
+    	contents.add("content1..........................................");
+    	contents.add("content2..........................................");
+    	contents.add("content4..........................................");
+    	contents.add("content3..........................................");
+    	contents.add("content5..........................................");
+    	contents.add("content6..........................................");
+    	map.put("contents", contents);
+        
         Template tpl    = null;  
         try {  
-            tpl =  freeMarkerConfigurer.getConfiguration().getTemplate("reg.ftl");//加载资源文件  
+            tpl =  freeMarkerConfigurer.getConfiguration().getTemplate("mail.ftl");//加载资源文件  
             htmlText = FreeMarkerTemplateUtils.processTemplateIntoString(tpl, map);//加入map到模板中 对应${content}  
         } catch (IOException e) {             
             e.printStackTrace();  

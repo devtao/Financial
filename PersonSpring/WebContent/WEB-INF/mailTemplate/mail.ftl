@@ -36,7 +36,7 @@
                                     <td align="left" style="padding: 4px 0px 2px 8px; font-weight: bold; text-align: left;
                                         color: #3d85c8;">
                                         <a title="Visit us." href="http://www.selleckchem.com/">
-                                            <img style="border: 0;" alt="Selleck Logo - www.selleckchem.com" src="http://file.selleckchem.com/images/logo.gif"
+                                            <img style="border: 0;" alt="Selleck Logo - www.selleckchem.com" src=${logo}
                                                 width="280" /></a>
                                     </td>
                                 </tr>
@@ -50,7 +50,7 @@
                         <td colspan="3" style="padding: 0 0 0 0;">
                             <div style="border: 0; font-size: 0;">
                                 <a title="See details." href="http://www.selleckchem.com/screening/gpcr-library.html">
-                                    <img style="border: none;" alt="GPCR Small Molecule Compound Library" title="See details." src="http://www.selleckchem.com/newsletter-fodder/lib-gpcr-banner.png"
+                                    <img style="border: none;" alt="GPCR Small Molecule Compound Library" title="See details." src=${banner}
                                         width="600" height="94" /></a></div>
                         </td>
                     </tr>
@@ -210,10 +210,9 @@
                                             </tr>
                                             <tr>
                                                 <td style="padding: 4px 8px 4px 8px; vertical-align: top;">
-                                                    <span style="color: #f38554;">●</span>${content1}<br />
-                                                    <span style="color: #f38554;">●</span>${content2}<br />
-                                                    <span style="color: #f38554;">●</span>${content3} 
-                                                </td>
+                                                     <#list contents as content> 
+  														   <span style="color: #f38554;">●</span>${content}<br />
+  													</#list>
                                             </tr>
                                         </table>
                                     </td>
