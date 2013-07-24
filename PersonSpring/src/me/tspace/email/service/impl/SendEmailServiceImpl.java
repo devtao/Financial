@@ -19,11 +19,13 @@ public class SendEmailServiceImpl implements ISendEmailService {
 		
 		   MailSenderInfo mailInfo = new MailSenderInfo();  
 	        // 这个类主要是设置邮件  
-	        mailInfo.setMailServerHost("smtp.qq.com");// 服务器地址  
-	        mailInfo.setMailServerPort("25");// 端口  
+	        mailInfo.setMailServerHost("smtp.gmail.com");// 服务器地址  
+	        mailInfo.setMailServerPort("465");// 正常端口25，gmail端口465  
 	        mailInfo.setValidate(true); // 是否验证，这个地方是必须的  
-	        mailInfo.setFromAddress("240160085@qq.com");// 这个是你的邮箱  ,在程序发送一方需对应,就是你在配置文件的发送邮箱的名称  
-	        mailInfo.setToAddress("dev.tao@gmail.com");// 目的地  
+	        mailInfo.setFromAddress("haut.tao@gmail.com");// 这个是你的邮箱  ,在程序发送一方需对应,就是你在配置文件的发送邮箱的名称  
+	        mailInfo.setToAddress("dev.tao@gmail.com");// 目的地
+	        
+	        
 	        mailInfo.setSubject("这是一封模板邮件");  
 	        mailInfo.setContent("模板邮件测试内容");  
 	        fs.sendTemplate(mailInfo);  
