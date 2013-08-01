@@ -54,5 +54,8 @@
 	
 	<!-- Freemarker配置 -->
 	<import resource="classpath:/config/spring/spring-freemarker.xml" />
+	
+		<!-- Timer Task 配置 -->
+	<import resource="classpath:/config/spring/spring-task.xml" />
 
 </beans>
