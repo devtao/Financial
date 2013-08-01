@@ -26,10 +26,16 @@
 	 	<property name="targetMethod" value="doBiz" />
 	</bean>
 	
-	<!--类似contab的 调度触发器 -->
-	<bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+	<!--类似contab的 调度触发器
+	<bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">  
  		<property name="jobDetail" ref="jobDetail" />
- 		<property name="cronExpression" value="0/5 * * * * ?" /><!-- 不延迟，每隔5秒执行一次 -->
+ 		<property name="cronExpression" value="0/20 * * * * ?" /> 不延迟执行，每隔5秒执行一次
+	</bean> -->
+	
+	<!--类似contab的 调度触发器 -->
+	<bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">  
+ 		<property name="jobDetail" ref="jobDetail" />
+ 		<property name="cronExpression" value="0 01 21 ? * TUE,THU" /><!-- 每周二，周四 晚上 21：01执行 -->
 	</bean>
 	
 	<!-- 简单的调度触发器，功能同contab触发器一致 
