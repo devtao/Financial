@@ -31,7 +31,7 @@
     <!-- 配置freeMarkerConfigurer进行属性值的注入 -->  
     <bean id="freeMarkerConfigurer" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">  
 <!--  放在源代码下的路径     <property name="templateLoaderPaths"  value="classpath:mailTemplate" />   --> 
-			<property name="templateLoaderPaths"  value="WEB-INF/mailTemplate" />    
+			<property name="templateLoaderPaths"  value="WEB-INF/views/email/mailTemplate" />    
 		    <property name="freemarkerSettings">  
             <props>  
                 <prop key="template_update_delay">1800</prop><!-- 模板更新延时 -->  
