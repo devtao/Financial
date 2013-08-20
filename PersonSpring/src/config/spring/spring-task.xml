@@ -23,7 +23,7 @@
 		<!-- 调度业务 -->
 	<bean id="jobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
 	 	<property name="targetObject" ref="bizObject" />
-	 	<property name="targetMethod" value="doBiz" />
+	 	<property name="targetMethod" value="execute" />
 	</bean>
 	
 	<!--类似contab的 调度触发器

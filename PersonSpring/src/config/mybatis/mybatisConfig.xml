@@ -18,14 +18,14 @@
 	</settings>
     
     <typeAliases>  
-        <typeAlias alias="User" type="me.tspace.account.model.User"/>  
-        <typeAlias alias="Login" type="me.tspace.account.model.Login"/>  
+<!--         <typeAlias alias="User" type="me.tspace.account.model.User"/>  
+        <typeAlias alias="Login" type="me.tspace.account.model.Login"/>   -->
     </typeAliases>
       
     <mappers>  
-        <mapper resource="sqlmap/account/UserDaoMapperTest.xml" />  
+<!--         <mapper resource="sqlmap/account/UserDaoMapperTest.xml" />  
         <mapper resource="sqlmap/account/LoginMapper.xml" />  
-        <mapper resource="sqlmap/account/UserMapper.xml" />  
+        <mapper resource="sqlmap/account/UserMapper.xml" />   -->
     </mappers>  
     
 </configuration>
