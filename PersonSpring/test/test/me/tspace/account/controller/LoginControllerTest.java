@@ -1,4 +1,4 @@
-package me.tspace.account.controller.test;
+package test.me.tspace.account.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

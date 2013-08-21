@@ -1,4 +1,4 @@
-package me.tspace.account.dao.test;
+package test.me.tspace.account.dao;
 
 import org.apache.log4j.PropertyConfigurator;
 import org.junit.BeforeClass;
