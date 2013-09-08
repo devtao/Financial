@@ -42,7 +42,7 @@
     <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
   </listener>
   <welcome-file-list>
-    <welcome-file>login.do</welcome-file>
+    <welcome-file>welcome.jsp</welcome-file>
   </welcome-file-list>
   <session-config>
     <session-timeout>30</session-timeout>

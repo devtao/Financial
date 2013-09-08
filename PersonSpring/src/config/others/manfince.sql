@@ -1,36 +1,21 @@
-CRATE DATABASE PERSONSPRING;
+CRATE DATABASE manfince;
 
-USE DATABASE PERSONSPRING;
+USE DATABASE manfince;
 
-CREATE TABLE T_LOGIN (
-	LOGIN_ID INT (20) NOT NULL AUTO_INCREMENT,
-	LOGIN_NAME VARCHAR (50) DEFAULT NULL UNIQUE COMMENT '注册登录名限制为EMAIL，唯一',
-	LOGIN_EMAIL VARCHAR (50) DEFAULT NULL UNIQUE COMMENT '注册Email限制为EMAIL，唯一',
-	LOGIN_PWD VARCHAR (50) DEFAULT NULL COMMENT '密码',
-	LOGIN_LEVEL INT DEFAULT 0 COMMENT '0为游客，1为注册用户，2为管理员',
-	LOGIN_IP VARCHAR(50) DEFAULT NULL COMMENT'IP',
-	LOGIN_REGDATE DATETIME DEFAULT NULL COMMENT '注册日期',
-	LOGIN_LASTDATE DATETIME DEFAULT NULL COMMENT '最近登录日期',
-	PRIMARY KEY (LOGIN_ID)
-) ENGINE = INNODB DEFAULT CHARSET = UTF8 COMMENT '登录账户表';
+create table t_user (
+	user_id int (20) not null auto_increment,
+	user_login_name varchar (50) default null comment '登陆用户名',
+	user_password varchar (50) default null comment '用户密码',
+	user_email varchar (50) default null comment '用户EMAIL',
+	user_regdate datetime default null comment '注册日期',
+    user_lastdate datetime default null comment '最近登录日期',
+    user_last_ip varchar(50) default null comment'IP',
+	primary key (USER_ID)
+) engine = innodb default charset = utf8 comment '用户表';
 
-CREATE TABLE T_USER (
-	USER_ID INT (20) NOT NULL AUTO_INCREMENT,
-	USER_LOGIN_ID INT (20) COMMENT '外键 LOGIN_ID',
-	USER_FAMILY_ID INT (20) DEFAULT 0 COMMENT '家庭编号',
-	USER_LEVEL INT(20) DEFAULT 0 COMMENT '用户级别',
-	USER_NAME VARCHAR (50) DEFAULT NULL COMMENT '用户姓名',
-	USER_EMAIL VARCHAR (50) DEFAULT NULL COMMENT '用户EMAIL,同T_LOGIN.LOGIN_NAME',
-	USER_REGDATE DATETIME DEFAULT NULL COMMENT '注册日期，同T_LOGIN.LOGIN_REGDATE_DATETIME',
-	PRIMARY KEY (USER_ID)
-) ENGINE = INNODB DEFAULT CHARSET = UTF8 COMMENT '用户表';
+insert into t_user(user_login_name,user_password,user_email,user_regdate,user_lastdate,user_last_ip) values('liutao','111111','liutao@test.com',now(),now(),'127.0.0.1');
+insert into t_user(user_login_name,user_password,user_email,user_regdate,user_lastdate,user_last_ip) values('liutao2','111111','liutao2@test.com',now(),now(),'127.0.0.1');
 
-CREATE TABLE T_FAMILY (
-	FAMILY_ID INT (20) NOT NULL AUTO_INCREMENT,
-	FAMILY_NAME VARCHAR (50) DEFAULT NULL UNIQUE COMMENT '家庭账户名称',
-	FAMILY_REGDATE DATETIME DEFAULT NULL COMMENT '家庭账户创建日期',
-	PRIMARY KEY (FAMILY_ID)
-) ENGINE = INNODB DEFAULT CHARSET = UTF8 COMMENT '家庭账户表';
 
 CREATE TABLE T_ACCOUNT (
 	ACCT_ID INT (20) NOT NULL AUTO_INCREMENT,

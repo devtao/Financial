@@ -23,8 +23,10 @@
 	<!-- controller层的属性和配置文件读入 ,多个用逗号隔开-->
 	<context:property-placeholder location="classpath:/config/mybatis/jdbc.properties,classpath:/config/others/config.properties" />
 	
+	
 	<!-- 用于持有ApplicationContext,可以使用SpringContextHolder.getBean('xxxx')的静态方法得到spring bean对象 -->
-	<bean class="me.tspace.common.springmvc.SpringContextHolder" lazy-init="false" />
+	<!--<bean class="me.tspace.common.springmvc.SpringContextHolder" lazy-init="false" />
+	-->
 	
 	<!-- 数据连接事务 -->
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
@@ -56,6 +58,6 @@
 	<import resource="classpath:/config/spring/spring-freemarker.xml" />
 	
 		<!-- Timer Task 配置 -->
-	<import resource="classpath:/config/spring/spring-task.xml" />
+	<!--<import resource="classpath:/config/spring/spring-task.xml" />-->
 
 </beans>

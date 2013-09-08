@@ -29,9 +29,9 @@
 	</bean>
 
 	<!-- 用于持有applicationProperties,将properties转变为静态方法使用,PropertiesHolder.getProperty("somekey") -->
-	<bean class="me.tspace.common.utils.PropertiesHolder">
+	<!--<bean class="me.tspace.common.utils.PropertiesHolder">
 		<property name="properties" ref="applicationProperties" />
-	</bean>
+	</bean>-->
 
 	<!-- PropertyPlaceholderConfigurer,用于spring ${placeholder}的解析 -->
 	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
