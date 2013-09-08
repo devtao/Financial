@@ -1,4 +1,4 @@
-package me.tspace.handler.date;
+package me.tspace.common.handler.date;
 
 import java.text.SimpleDateFormat;  
 import java.util.ArrayList;  
