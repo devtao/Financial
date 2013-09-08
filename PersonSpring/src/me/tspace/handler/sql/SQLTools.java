@@ -1,4 +1,4 @@
-package me.tspace.handler;
+package me.tspace.handler.sql;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
