@@ -1,8 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-	<title>Free CSS template by ChocoTemplates.com</title>
+	<title>大T的空间</title>
 	<link rel="stylesheet" href="resources/mondays/css/style.css" type="text/css" media="all" />
 	<script src="resources/mondays/js/jquery-1.4.1.min.js" type="text/javascript"></script>
 	<script src="resources/mondays/js/jquery.jcarousel.pack.js" type="text/javascript"></script>
@@ -11,99 +13,7 @@
 <body>
 <div id="page" class="shell">
 	<!-- Logo + Search + Navigation -->
-	<div id="top">
-		<div class="cl">&nbsp;</div>
-		<h1 id="logo"><a href="#">MONDAYS</a></h1>
-		<form action="" method="post" id="search">
-			<div class="field-holder">
-				<input type="text" class="field" value="Search" title="Search" />
-			</div>
-			<input type="submit" class="button" value="Search" />
-			<div class="cl">&nbsp;</div>
-		</form>
-		<div class="cl">&nbsp;</div>
-		<div id="navigation">
-			<ul>
-			    <li>
-			    	<a href="#" class="active"><span>home</span></a>
-			    	<ul>
-			    		<li><a href="#">about us</a></li>
-			    		<li><a href="#">services</a></li>
-			    		<li><a href="#">solutions</a></li>
-			    		<li><a href="#">support</a></li>
-			    		<li><a href="#">partners</a></li>
-			    		<li><a href="#">contact</a></li>
-			    	</ul>
-			    </li>
-			    <li>
-			    	<a href="#"><span>about us</span></a>
-			    	<ul>
-			    		<li><a href="#">about us</a></li>
-			    		<li><a href="#">services</a></li>
-			    		<li><a href="#">solutions</a></li>
-			    		<li><a href="#">support</a></li>
-			    		<li><a href="#">partners</a></li>
-			    		<li><a href="#">contact</a></li>
-			    	</ul>
-			    </li>
-			    <li>
-			    	<a href="#"><span>services</span></a>
-			    	<ul>
-			    		<li><a href="#">about us</a></li>
-			    		<li><a href="#">services</a></li>
-			    		<li><a href="#">solutions</a></li>
-			    		<li><a href="#">support</a></li>
-			    		<li><a href="#">partners</a></li>
-			    		<li><a href="#">contact</a></li>
-			    	</ul>
-			    </li>
-			    <li>
-			    	<a href="#"><span>solutions</span></a>
-			    	<ul>
-			    		<li><a href="#">about us</a></li>
-			    		<li><a href="#">services</a></li>
-			    		<li><a href="#">solutions</a></li>
-			    		<li><a href="#">support</a></li>
-			    		<li><a href="#">partners</a></li>
-			    		<li><a href="#">contact</a></li>
-			    	</ul>
-			    </li>
-			    <li>
-			    	<a href="#"><span>support</span></a>
-			    	<ul>
-			    		<li><a href="#">about us</a></li>
-			    		<li><a href="#">services</a></li>
-			    		<li><a href="#">solutions</a></li>
-			    		<li><a href="#">support</a></li>
-			    		<li><a href="#">partners</a></li>
-			    		<li><a href="#">contact</a></li>
-			    	</ul>
-			    </li>
-			    <li>
-			    	<a href="#"><span>partners</span></a>
-			    	<ul>
-			    		<li><a href="#">about us</a></li>
-			    		<li><a href="#">services</a></li>
-			    		<li><a href="#">solutions</a></li>
-			    		<li><a href="#">support</a></li>
-			    		<li><a href="#">partners</a></li>
-			    		<li><a href="#">contact</a></li>
-			    	</ul>
-			    </li>
-			    <li>
-			    	<a href="#"><span>contact</span></a>
-			    	<ul>
-			    		<li><a href="#">about us</a></li>
-			    		<li><a href="#">services</a></li>
-			    		<li><a href="#">solutions</a></li>
-			    		<li><a href="#">support</a></li>
-			    		<li><a href="#">partners</a></li>
-			    		<li><a href="#">contact</a></li>
-			    	</ul>
-			    </li>
-			</ul>
-		</div>	
-	</div>
+	<%@include file="navigation.jsp" %>
 	<!-- END Logo + Search + Navigation -->
 	<!-- Header -->
 	<div id="header">
@@ -198,11 +108,7 @@
 	</div>
 	<!-- END Main -->
 	<!-- Footer -->
-	<div id="footer">
-		<p class="right">&copy; 2010 - CompanyName &nbsp; Design by <a href="http://chocotemplates.com" target="_blank" title="The Sweetest CSS Templates WorldWide">Chocotemplates.com</a></p>
-		<p><a href="#">Home</a><span>&nbsp;</span><a href="#">About Us</a><span>&nbsp;</span><a href="#">Services</a><span>&nbsp;</span><a href="#">Solutions</a><span>&nbsp;</span><a href="#">Support</a><span>&nbsp;</span><a href="#">Partners</a><span>&nbsp;</span><a href="#">Contact</a></p>
-		<div class="cl">&nbsp;</div>
-	</div>
+	<%@include file="footer.jsp" %>
 	<!-- END Footer -->
 	<br />
 </div>
