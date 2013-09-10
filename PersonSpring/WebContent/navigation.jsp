@@ -32,6 +32,7 @@
 			    		<li><a href="#">报表统计</a></li>
 			    		<li><a href="#">记账类别</a></li>
 			    		<li><a href="#">固定收入</a></li>
+			    		<li><a href="#">外债</a></li>
 			    	</ul>
 			    </li>
 			    <li>
