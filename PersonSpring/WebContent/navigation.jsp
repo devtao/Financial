@@ -1,5 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<%  
+String path = request.getContextPath();  
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";  
+%>  
+    
+<link rel="stylesheet" href="<%=basePath%>/resources/mondays/css/style.css" type="text/css" media="all" />
+<script src="<%=basePath%>/resources/mondays/js/jquery-1.4.1.min.js" type="text/javascript"></script>
+<script src="<%=basePath%>/resources/mondays/js/jquery.jcarousel.pack.js" type="text/javascript"></script>
+<script src="<%=basePath%>/resources/mondays/js/jquery-func.js" type="text/javascript"></script>
+    
 <div id="top">
 		<div class="cl">&nbsp;</div>
 		<h1 id="logo"><a href="#">MONDAYS</a></h1>
