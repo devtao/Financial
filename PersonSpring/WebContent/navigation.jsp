@@ -10,6 +10,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script src="<%=basePath%>/resources/mondays/js/jquery-1.4.1.min.js" type="text/javascript"></script>
 <script src="<%=basePath%>/resources/mondays/js/jquery.jcarousel.pack.js" type="text/javascript"></script>
 <script src="<%=basePath%>/resources/mondays/js/jquery-func.js" type="text/javascript"></script>
+
+<base href="<%=basePath%>">  
     
 <div id="top">
 		<div class="cl">&nbsp;</div>
@@ -25,25 +27,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div id="navigation">
 			<ul>
 			    <li>
-			    	<a href="#" class="active"><span>首页</span></a>
-			    	<ul>
+			    	<a href="home.jsp" class="active"><span>首页</span></a>
+			     <!-- <ul>
 			    		<li><a href="#">个人理财</a></li>
 			    		<li><a href="#">日历</a></li>
 			    		<li><a href="#">密码备忘</a></li>
 			    		<li><a href="#">计划目标</a></li>
 			    		<li><a href="#">名人名言</a></li>
 			    		<li><a href="#">关于大T</a></li>
-			    	</ul>
+			    	</ul>  -->
 			    </li>
 			    <li>
-			    	<a href="#"><span>个人理财</span></a>
+			    	 <a href="home.jsp"><span>个人理财</span></a> 
 			    	<ul>
-			    		<li><a href="#">支出</a></li>
-			    		<li><a href="#">收入</a></li>
-			    		<li><a href="#">报表统计</a></li>
-			    		<li><a href="#">记账类别</a></li>
-			    		<li><a href="#">固定收入</a></li>
-			    		<li><a href="#">外债</a></li>
+			    		<li><a href="finance/spend">支出</a></li>
+			    		<li><a href="finance/income">收入</a></li>
+			    		<li><a href="finance/reports">报表统计</a></li>
+			    		<li><a href="finance/category">记账类别</a></li>
+			    		<li><a href="finance/regular">固定收入</a></li>
+			    		<li><a href="finance/debt">外债</a></li>
 			    	</ul>
 			    </li>
 			    <li>
