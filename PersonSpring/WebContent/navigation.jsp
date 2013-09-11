@@ -38,7 +38,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			    	</ul>  -->
 			    </li>
 			    <li>
-			    	 <a href="home.jsp"><span>个人理财</span></a> 
+			    	 <span style="color: #FFFFFF;">个人理财</span>
 			    	<ul>
 			    		<li><a href="finance/spend">支出</a></li>
 			    		<li><a href="finance/income">收入</a></li>
