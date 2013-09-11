@@ -16,55 +16,126 @@ create table t_user (
 insert into t_user(user_login_name,user_password,user_email,user_regdate,user_lastdate,user_last_ip) values('liutao','111111','liutao@test.com',now(),now(),'127.0.0.1');
 insert into t_user(user_login_name,user_password,user_email,user_regdate,user_lastdate,user_last_ip) values('liutao2','111111','liutao2@test.com',now(),now(),'127.0.0.1');
 
+#################################################################################################################
 
-CREATE TABLE T_ACCOUNT (
-	ACCT_ID INT (20) NOT NULL AUTO_INCREMENT,
-	ACCT_USER_ID INT (20) DEFAULT NULL COMMENT '用户ID:T_USER.USER_ID',
-	ACCT_NAME VARCHAR (50) DEFAULT NULL COMMENT '账户名称',
-	ACCT_STATE VARCHAR (50) DEFAULT NULL COMMENT '账户状态：0未使用1在用',
-	ACCT_CURRENCY_TYPE VARCHAR (50) DEFAULT NULL COMMENT '货币类型：1:RMB 2:DOLLAR',
-	ACCT_MONEY FLOAT(9,2) DEFAULT NULL COMMENT '账户金额',
-	ACCT_WARING_TYPE VARCHAR (50) DEFAULT NULL COMMENT '预警状态:0预警 1关闭',
-	ACCT_WARING_MONEY FLOAT(9,2) DEFAULT NULL COMMENT '预警金额',
-	ACCT_DEFAULT_FLAG  VARCHAR (50) DEFAULT NULL COMMENT '是否默认账户',
-	ACCT_PARENT_ID INT (20) DEFAULT NULL COMMENT '所属父类记账类型ID',
-	ACCT_CREATEDATE DATETIME DEFAULT NULL COMMENT '账户创建日期',
-	ACCT_REMARK VARCHAR (1024) DEFAULT NULL COMMENT '账户备注 ',
-	PRIMARY KEY (ACCT_ID) 
-) ENGINE = INNODB DEFAULT CHARSET = UTF8 COMMENT '账户表';
+CREATE TABLE t_money_category (
+	ID INT (20) NOT NULL AUTO_INCREMENT,
+	category_type VARCHAR (100) DEFAULT NULL COMMENT '类型',
+	name VARCHAR (100) DEFAULT NULL COMMENT '名称',
+	base_id INT (20) DEFAULT NULL COMMENT '父类型ID',
+    type_flag int(20) DEFAULT NULL COMMENT '标识父类型或子类型 0 父类型 1子类型',
+	PRIMARY KEY (category_ID)
+) ENGINE = INNODB DEFAULT CHARSET = UTF8 COMMENT '类型表';
 
-CREATE TABLE T_ACCOUNT_TYPE (
-	ACCT_TYPE_ID INT (20) NOT NULL AUTO_INCREMENT,
-	ACCT_TYPE_CATEGORY VARCHAR (50) DEFAULT NULL COMMENT '所属类型 1.支出 2.收入',
-	ACCT_TYPE_NAME VARCHAR (50) DEFAULT NULL COMMENT '记账类型名称',
-	ACCT_TYPE_PARENT_ID INT (20) DEFAULT NULL COMMENT '所属父类记账类型ID',
-	PRIMARY KEY (ACCT_TYPE_ID)
-) ENGINE = INNODB DEFAULT CHARSET = UTF8 COMMENT '记账类型表';
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("收入","股票收入",0,0); 
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("收入","基金收入",0,0);
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("收入","彩票收入",0,0);
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("收入","其他收入",0,0);
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("收入","工资",0,0);
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("收入","奖金",0,0);
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("收入","兼职",0,0);
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("收入","利息",0,0);
 
-CREATE TABLE T_BOOK (
-	BOOK_ID INT (20) NOT NULL AUTO_INCREMENT,
-	BOOK_USER_ID INT (20) DEFAULT NULL COMMENT '用户ID:T_USER.USER_ID',
-	BOOK_NAME VARCHAR (50) DEFAULT NULL COMMENT '账本名称',
-	BOOK_MONEY FLOAT(9,2) DEFAULT NULL COMMENT '账本金额',
-	BOOK_STARTTIME DATETIME DEFAULT NULL COMMENT '账本创建时间',
-	BOOK_REMARK VARCHAR (1024) DEFAULT NULL COMMENT '账本备注 ',
-	PRIMARY KEY (BOOK_ID),
-	FOREIGN KEY (BOOK_USER_ID) REFERENCES T_USER (USER_ID)
-) ENGINE = INNODB DEFAULT CHARSET = UTF8 COMMENT '账本表';
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("支出","彩票投资",0,0);
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("支出","孝敬父母",0,0);
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("支出","其他杂项",0,0);
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("支出","金融保险",0,0);
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("支出","医疗保健",0,0);
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("支出","人情往来",0,0);
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("支出","学习进修",0,0);
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("支出","休闲娱乐",0,0);
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("支出","交流通讯",0,0);
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("支出","行车交通",0,0);
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("支出","居家物业",0,0);
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("支出","食品酒水",0,0);
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("支出","衣服饰品",0,0);
+                                                                                                           
 
-CREATE TABLE T_RECORDS_DETAIL (
-	RECORDS_DETAIL_ID INT (20) NOT NULL AUTO_INCREMENT,
-	RECORDS_USER_ID INT (20) DEFAULT NULL COMMENT '用户ID',
-	RECORDS_ACCT_TYPE_ID INT (20) DEFAULT NULL COMMENT '记账类别ID',
-	RECORDS_BOOK_ID INT (20) DEFAULT NULL COMMENT '账本ID',
-	RECORDS_ACCT_ID INT (20) DEFAULT NULL COMMENT '账户ID',
-	RECORDS_MONEY FLOAT(9,2) DEFAULT NULL COMMENT '记账金额 收入为+，支出为-',
-	RECORDS_DAY_PAY FLOAT(9,2) DEFAULT NULL COMMENT '当天支出',
-	RECORDS_DAY_INCOME FLOAT(9,2) DEFAULT NULL COMMENT '当天收入',
-	RECORDS_DATE DATETIME DEFAULT NULL COMMENT '记账日期 ',
-	RECORDS_OCCUR_DATE DATETIME DEFAULT NULL COMMENT '发生日期 ',
-	RECORDS_REMARK VARCHAR (255) DEFAULT NULL COMMENT '备注描述 ',
-	PRIMARY KEY (RECORDS_DETAIL_ID) ,
-	FOREIGN KEY (RECORDS_BOOK_ID) REFERENCES T_BOOK (BOOK_ID),
-	FOREIGN KEY (RECORDS_USER_ID) REFERENCES T_USER (USER_ID)
-) ENGINE = INNODB DEFAULT CHARSET = UTF8 COMMENT '账单明细表';
+#################################################################################################################
+
+CREATE TABLE t_money_debt (
+	id INT (20) NOT NULL AUTO_INCREMENT,
+	debt_type INT (20) DEFAULT NULL COMMENT '债务类型 0 借入 1借出',
+	amount  FLOAT(9,2) DEFAULT NULL COMMENT '债务金额',
+	dist_name VARCHAR (50) DEFAULT NULL COMMENT '债务人名称',
+	create_date DATETIME DEFAULT NULL COMMENT '创建日期',
+	remark VARCHAR (1024) DEFAULT NULL COMMENT '账户备注 ',
+	PRIMARY KEY (debt_id) 
+) ENGINE = INNODB DEFAULT CHARSET = UTF8 COMMENT '债务表';
+
+
+INSERT INTO `manfince`.`t_money_debt`(`debt_type`,`amount`,`dist_name`,`create_date`,`remark`) VALUES (1,3000,"刘鹏",now(),'');
+INSERT INTO `manfince`.`t_money_debt`(`debt_type`,`amount`,`dist_name`,`create_date`,`remark`) VALUES (1,3500,"刘晗",now(),'');
+INSERT INTO `manfince`.`t_money_debt`(`debt_type`,`amount`,`dist_name`,`create_date`,`remark`) VALUES (1,4500,"刘斌",now(),'');
+INSERT INTO `manfince`.`t_money_debt`(`debt_type`,`amount`,`dist_name`,`create_date`,`remark`) VALUES (1,10000,"陈亚丽",now(),'');
+
+#################################################################################################################
+
+CREATE TABLE t_money_income (
+	id INT (20) NOT NULL AUTO_INCREMENT,
+	income_type INT (20) DEFAULT NULL COMMENT '收入类型',
+	amount  FLOAT(9,2) DEFAULT NULL COMMENT '收入金额',
+	create_date DATETIME DEFAULT NULL COMMENT '创建日期',
+	remark VARCHAR (1024) DEFAULT NULL COMMENT '备注 ',
+	PRIMARY KEY (id) 
+) ENGINE = INNODB DEFAULT CHARSET = UTF8 COMMENT '收入表';
+
+INSERT INTO `manfince`.`t_money_income`(`income_type`,`amount`,`create_date`,`remark`)VALUES(2,20,now(),'');
+INSERT INTO `manfince`.`t_money_income`(`income_type`,`amount`,`create_date`,`remark`)VALUES(3,30,now(),'');
+INSERT INTO `manfince`.`t_money_income`(`income_type`,`amount`,`create_date`,`remark`)VALUES(4,22,now(),'');
+INSERT INTO `manfince`.`t_money_income`(`income_type`,`amount`,`create_date`,`remark`)VALUES(1,33,now(),'');
+
+#################################################################################################################
+
+CREATE TABLE t_money_spend (
+	id INT (20) NOT NULL AUTO_INCREMENT,
+	spend_type INT (20) DEFAULT NULL COMMENT '支出类型',
+	amount  FLOAT(9,2) DEFAULT NULL COMMENT '支出金额',
+	create_date DATETIME DEFAULT NULL COMMENT '创建日期',
+	remark VARCHAR (1024) DEFAULT NULL COMMENT '备注 ',
+	PRIMARY KEY (id) 
+) ENGINE = INNODB DEFAULT CHARSET = UTF8 COMMENT '支出表';
+
+INSERT INTO `manfince`.`t_money_spend`(`spend_type`,`amount`,`create_date`,`remark`)VALUES(9,20,now(),'');
+INSERT INTO `manfince`.`t_money_spend`(`spend_type`,`amount`,`create_date`,`remark`)VALUES(8,30,now(),'');
+INSERT INTO `manfince`.`t_money_spend`(`spend_type`,`amount`,`create_date`,`remark`)VALUES(11,22,now(),'');
+INSERT INTO `manfince`.`t_money_spend`(`spend_type`,`amount`,`create_date`,`remark`)VALUES(10,33,now(),'');
+
+#################################################################################################################
+
+CREATE TABLE t_money_regular (
+	debt_id INT (20) NOT NULL AUTO_INCREMENT,
+	debt_type INT (20) DEFAULT NULL COMMENT '债务类型 0 借入 1借出',
+	debt_amount  FLOAT(9,2) DEFAULT NULL COMMENT '债务金额',
+	debt_dist_name VARCHAR (50) DEFAULT NULL COMMENT '债务人名称',
+	debt_create_date DATETIME DEFAULT NULL COMMENT '创建日期',
+	debt_remark VARCHAR (1024) DEFAULT NULL COMMENT '账户备注 ',
+	PRIMARY KEY (debt_id) 
+) ENGINE = INNODB DEFAULT CHARSET = UTF8 COMMENT '债务表';
+
+#################################################################################################################
+
+CREATE TABLE t_money_invest (
+	debt_id INT (20) NOT NULL AUTO_INCREMENT,
+	debt_type INT (20) DEFAULT NULL COMMENT '债务类型 0 借入 1借出',
+	debt_amount  FLOAT(9,2) DEFAULT NULL COMMENT '债务金额',
+	debt_dist_name VARCHAR (50) DEFAULT NULL COMMENT '债务人名称',
+	debt_create_date DATETIME DEFAULT NULL COMMENT '创建日期',
+	debt_remark VARCHAR (1024) DEFAULT NULL COMMENT '账户备注 ',
+	PRIMARY KEY (debt_id) 
+) ENGINE = INNODB DEFAULT CHARSET = UTF8 COMMENT '债务表';
+
+#################################################################################################################
+
+
+CREATE TABLE t_money_report_balance (
+	debt_id INT (20) NOT NULL AUTO_INCREMENT,
+	debt_type INT (20) DEFAULT NULL COMMENT '债务类型 0 借入 1借出',
+	debt_amount  FLOAT(9,2) DEFAULT NULL COMMENT '债务金额',
+	debt_dist_name VARCHAR (50) DEFAULT NULL COMMENT '债务人名称',
+	debt_create_date DATETIME DEFAULT NULL COMMENT '创建日期',
+	debt_remark VARCHAR (1024) DEFAULT NULL COMMENT '账户备注 ',
+	PRIMARY KEY (debt_id) 
+) ENGINE = INNODB DEFAULT CHARSET = UTF8 COMMENT '债务表';
+
+#################################################################################################################

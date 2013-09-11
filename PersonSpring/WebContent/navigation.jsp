@@ -46,6 +46,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			    		<li><a href="finance/category">记账类别</a></li>
 			    		<li><a href="finance/regular">固定收入</a></li>
 			    		<li><a href="finance/debt">外债</a></li>
+			    		<li><a href="finance/invest">投资</a></li>
 			    	</ul>
 			    </li>
 			    <li>

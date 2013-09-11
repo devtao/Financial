@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping("/finance/spend")
 @Scope("prototype")
-public class spendController {
+public class SpendController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String init(HttpSession session) {
 		
