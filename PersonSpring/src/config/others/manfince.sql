@@ -19,55 +19,53 @@ insert into t_user(user_login_name,user_password,user_email,user_regdate,user_la
 #################################################################################################################
 
 CREATE TABLE t_money_category (
-	ID INT (20) NOT NULL AUTO_INCREMENT,
+	id INT (20) NOT NULL AUTO_INCREMENT,
 	category_type VARCHAR (100) DEFAULT NULL COMMENT '类型',
 	name VARCHAR (100) DEFAULT NULL COMMENT '名称',
-	base_id INT (20) DEFAULT NULL COMMENT '父类型ID',
-    type_flag int(20) DEFAULT NULL COMMENT '标识父类型或子类型 0 父类型 1子类型',
-	PRIMARY KEY (category_ID)
+	PRIMARY KEY (id)
 ) ENGINE = INNODB DEFAULT CHARSET = UTF8 COMMENT '类型表';
 
-INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("收入","股票收入",0,0); 
-INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("收入","基金收入",0,0);
-INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("收入","彩票收入",0,0);
-INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("收入","其他收入",0,0);
-INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("收入","工资",0,0);
-INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("收入","奖金",0,0);
-INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("收入","兼职",0,0);
-INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("收入","利息",0,0);
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`)VALUES ("收入","股票收入");  
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`)VALUES ("收入","基金收入");
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`)VALUES ("收入","彩票收入");
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`)VALUES ("收入","其他收入");
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`)VALUES ("收入","工资");
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`)VALUES ("收入","奖金");
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`)VALUES ("收入","兼职");
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`)VALUES ("收入","利息");
 
-INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("支出","彩票投资",0,0);
-INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("支出","孝敬父母",0,0);
-INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("支出","其他杂项",0,0);
-INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("支出","金融保险",0,0);
-INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("支出","医疗保健",0,0);
-INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("支出","人情往来",0,0);
-INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("支出","学习进修",0,0);
-INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("支出","休闲娱乐",0,0);
-INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("支出","交流通讯",0,0);
-INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("支出","行车交通",0,0);
-INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("支出","居家物业",0,0);
-INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("支出","食品酒水",0,0);
-INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`,`base_id`,`type_flag`)VALUES ("支出","衣服饰品",0,0);
-                                                                                                           
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`)VALUES ("支出","彩票投资");
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`)VALUES ("支出","孝敬父母");
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`)VALUES ("支出","其他杂项");
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`)VALUES ("支出","金融保险");
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`)VALUES ("支出","医疗保健");
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`)VALUES ("支出","人情往来");
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`)VALUES ("支出","学习进修");
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`)VALUES ("支出","休闲娱乐");
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`)VALUES ("支出","交流通讯");
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`)VALUES ("支出","行车交通");
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`)VALUES ("支出","居家物业");
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`)VALUES ("支出","食品酒水");
+INSERT INTO `manfince`.`t_money_category`(`category_type`,`name`)VALUES ("支出","衣服饰品");
+
 
 #################################################################################################################
 
 CREATE TABLE t_money_debt (
 	id INT (20) NOT NULL AUTO_INCREMENT,
-	debt_type INT (20) DEFAULT NULL COMMENT '债务类型 0 借入 1借出',
+	debt_type  VARCHAR (50) DEFAULT NULL COMMENT '借入，借出',
 	amount  FLOAT(9,2) DEFAULT NULL COMMENT '债务金额',
 	dist_name VARCHAR (50) DEFAULT NULL COMMENT '债务人名称',
 	create_date DATETIME DEFAULT NULL COMMENT '创建日期',
 	remark VARCHAR (1024) DEFAULT NULL COMMENT '账户备注 ',
-	PRIMARY KEY (debt_id) 
+	PRIMARY KEY (id) 
 ) ENGINE = INNODB DEFAULT CHARSET = UTF8 COMMENT '债务表';
 
 
-INSERT INTO `manfince`.`t_money_debt`(`debt_type`,`amount`,`dist_name`,`create_date`,`remark`) VALUES (1,3000,"刘鹏",now(),'');
-INSERT INTO `manfince`.`t_money_debt`(`debt_type`,`amount`,`dist_name`,`create_date`,`remark`) VALUES (1,3500,"刘晗",now(),'');
-INSERT INTO `manfince`.`t_money_debt`(`debt_type`,`amount`,`dist_name`,`create_date`,`remark`) VALUES (1,4500,"刘斌",now(),'');
-INSERT INTO `manfince`.`t_money_debt`(`debt_type`,`amount`,`dist_name`,`create_date`,`remark`) VALUES (1,10000,"陈亚丽",now(),'');
+INSERT INTO `manfince`.`t_money_debt`(`debt_type`,`amount`,`dist_name`,`create_date`,`remark`) VALUES ("借出",3000,"刘鹏",now(),'');
+INSERT INTO `manfince`.`t_money_debt`(`debt_type`,`amount`,`dist_name`,`create_date`,`remark`) VALUES ("借出",3500,"刘晗",now(),'');
+INSERT INTO `manfince`.`t_money_debt`(`debt_type`,`amount`,`dist_name`,`create_date`,`remark`) VALUES ("借出",4500,"刘斌",now(),'');
+INSERT INTO `manfince`.`t_money_debt`(`debt_type`,`amount`,`dist_name`,`create_date`,`remark`) VALUES ("借出",10000,"陈亚丽",now(),'');
 
 #################################################################################################################
 
@@ -104,38 +102,50 @@ INSERT INTO `manfince`.`t_money_spend`(`spend_type`,`amount`,`create_date`,`rema
 #################################################################################################################
 
 CREATE TABLE t_money_regular (
-	debt_id INT (20) NOT NULL AUTO_INCREMENT,
-	debt_type INT (20) DEFAULT NULL COMMENT '债务类型 0 借入 1借出',
-	debt_amount  FLOAT(9,2) DEFAULT NULL COMMENT '债务金额',
-	debt_dist_name VARCHAR (50) DEFAULT NULL COMMENT '债务人名称',
-	debt_create_date DATETIME DEFAULT NULL COMMENT '创建日期',
-	debt_remark VARCHAR (1024) DEFAULT NULL COMMENT '账户备注 ',
-	PRIMARY KEY (debt_id) 
-) ENGINE = INNODB DEFAULT CHARSET = UTF8 COMMENT '债务表';
+        id INT (20) NOT NULL AUTO_INCREMENT,
+        regular_type INT (20) DEFAULT NULL COMMENT '类型',
+        amount  FLOAT(9,2) DEFAULT NULL COMMENT '金额',
+        cycle VARCHAR (50) DEFAULT NULL COMMENT '周期 每天，每周，每月，每年',
+        start_date DATETIME DEFAULT NULL COMMENT '开始日期',
+        last_date DATETIME DEFAULT NULL COMMENT '最后执行日期',
+        exe_time INT (20) DEFAULT NULL COMMENT '执行次数',
+        remark VARCHAR (1024) DEFAULT NULL COMMENT '备注 ',
+        PRIMARY KEY (id) 
+) ENGINE = INNODB DEFAULT CHARSET = UTF8 COMMENT '定期周期表';
+
+
+INSERT INTO `manfince`.`t_money_regular`(`regular_type`,`amount`,`cycle`,`start_date`,`last_date`,`exe_time`,`remark`)VALUES(2,33.22,"每周",now(),now(),2,"");
+INSERT INTO `manfince`.`t_money_regular`(`regular_type`,`amount`,`cycle`,`start_date`,`last_date`,`exe_time`,`remark`)VALUES(2,22.22,"每天",now(),now(),2,"");
+INSERT INTO `manfince`.`t_money_regular`(`regular_type`,`amount`,`cycle`,`start_date`,`last_date`,`exe_time`,`remark`)VALUES(2,11.22,"每月",now(),now(),2,"");
+
 
 #################################################################################################################
 
 CREATE TABLE t_money_invest (
-	debt_id INT (20) NOT NULL AUTO_INCREMENT,
-	debt_type INT (20) DEFAULT NULL COMMENT '债务类型 0 借入 1借出',
-	debt_amount  FLOAT(9,2) DEFAULT NULL COMMENT '债务金额',
-	debt_dist_name VARCHAR (50) DEFAULT NULL COMMENT '债务人名称',
-	debt_create_date DATETIME DEFAULT NULL COMMENT '创建日期',
-	debt_remark VARCHAR (1024) DEFAULT NULL COMMENT '账户备注 ',
-	PRIMARY KEY (debt_id) 
-) ENGINE = INNODB DEFAULT CHARSET = UTF8 COMMENT '债务表';
+        id INT (20) NOT NULL AUTO_INCREMENT,
+        invest_type VARCHAR (50) DEFAULT NULL COMMENT '类型',
+        amount  FLOAT(9,2) DEFAULT NULL COMMENT '投资金额',
+        create_date DATETIME DEFAULT NULL COMMENT '创建日期',
+        invest_flag VARCHAR (50) DEFAULT NULL COMMENT '投资或者收益',
+        remark VARCHAR (1024) DEFAULT NULL COMMENT '备注 ',
+        PRIMARY KEY (id)
+) ENGINE = INNODB DEFAULT CHARSET = UTF8 COMMENT '投资表';
+
+INSERT INTO `manfince`.`t_money_invest`(`invest_type`,`amount`,`create_date`,`invest_flag`,`remark`)VALUES("投资",22.22,now(),0,"");
+INSERT INTO `manfince`.`t_money_invest`(`invest_type`,`amount`,`create_date`,`invest_flag`,`remark`)VALUES("投资",22.22,now(),0,"");
+INSERT INTO `manfince`.`t_money_invest`(`invest_type`,`amount`,`create_date`,`invest_flag`,`remark`)VALUES("投资",22.22,now(),0,"");
 
 #################################################################################################################
 
-
-CREATE TABLE t_money_report_balance (
-	debt_id INT (20) NOT NULL AUTO_INCREMENT,
-	debt_type INT (20) DEFAULT NULL COMMENT '债务类型 0 借入 1借出',
-	debt_amount  FLOAT(9,2) DEFAULT NULL COMMENT '债务金额',
-	debt_dist_name VARCHAR (50) DEFAULT NULL COMMENT '债务人名称',
-	debt_create_date DATETIME DEFAULT NULL COMMENT '创建日期',
-	debt_remark VARCHAR (1024) DEFAULT NULL COMMENT '账户备注 ',
-	PRIMARY KEY (debt_id) 
-) ENGINE = INNODB DEFAULT CHARSET = UTF8 COMMENT '债务表';
+CREATE TABLE t_money_current_balance (
+        id INT (20) NOT NULL AUTO_INCREMENT,
+        income_amount  FLOAT(9,2) DEFAULT NULL COMMENT '收入',
+        outcome_amount FLOAT(9,2) DEFAULT NULL COMMENT '支出',
+        debt_amount FLOAT(9,2) DEFAULT NULL COMMENT '债务',
+        invest_amount FLOAT(9,2) DEFAULT NULL COMMENT '投资',
+        balance_amount FLOAT(9,2) DEFAULT NULL COMMENT '余额',
+        remark VARCHAR (1024) DEFAULT NULL COMMENT '备注 ',
+        PRIMARY KEY (id)
+) ENGINE = INNODB DEFAULT CHARSET = UTF8 COMMENT '余额表';
 
 #################################################################################################################
