@@ -2,11 +2,10 @@
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
 
 <generatorConfiguration>
-	<classPathEntry location="C:\mysql-connector-java-5.1.24-bin.jar" />
+	<classPathEntry location="/home/dat/git/KeepEX/PersonSpring/WebContent/WEB-INF/mysql-connector-java-5.1.24-bin.jar" />
 	
 	<context id="context1" targetRuntime="MyBatis3">
-		 <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/mypm"  userId="mydev"	password="111111" /> 
-		<!-- <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.3.103/emailhunter?useUnicode=true&amp;characterEncoding=utf-8"  userId="root"	password="selleckemail2013" /> -->
+		 <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/manfince"  userId="root"	password="111111" /> 
 			
 		<javaModelGenerator targetPackage="me.tspace.account.model" targetProject="PersonSpring\src" >
 			 <property name="enableSubPackages" value="false" />
@@ -21,8 +20,13 @@
 			 <property name="enableSubPackages" value="false" />
 		</javaClientGenerator>
 			
-		<!-- <table tableName="T_Login" domainObjectName="Login" />
-		<table tableName="T_User" domainObjectName="User" />  -->
-		<table tableName="record_task_assignment" domainObjectName="TaskAssignment" />
+		<table tableName="T_User" domainObjectName="User" /> 
+		<table tableName="record_task_assignment" domainObjectName="TaskAssignment" 
+		   enableCountByExample="false" 
+	       enableUpdateByExample="false"                                                    
+	       enableDeleteByExample="false" 
+	       enableSelectByExample="false">
+		</table>
+		
 	</context>
 </generatorConfiguration>
