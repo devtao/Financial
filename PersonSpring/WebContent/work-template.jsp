@@ -5,8 +5,8 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";  
 %>  
 
-<!DOCTYPE HTML>
 
+<!DOCTYPE HTML>
 
 <!-- ............................. -->
 <!-- ............................. -->
@@ -30,13 +30,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!-- ............................. -->
 
 
-
 <!-- DON'T TOUCH THIS SECTION -->
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
-<base href="<%=basePath%>">  
 <!--[if lt IE 9]>
 <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -53,12 +51,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <!-- DON'T TOUCH THIS SECTION -->
 <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700|Cookie' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="resources/liquid/css/style.css">
+<link rel="stylesheet" type="text/css" href="resources/liquid/css/work.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script src="resources/liquid/scripts/jquery.carouFredSel-5.5.2.js" type="text/javascript"></script>
 <script type="text/javascript" src="resources/liquid/scripts/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="resources/liquid/scripts/jquery.form.js"></script> 
-<script type="text/javascript" src="resources/liquid/scripts/cripts.js"></script> 
+<script type="text/javascript" src="resources/liquid/scripts/scripts.js"></script> 
 </head>
 <!-- END OF DON'T TOUCH -->
 
@@ -72,7 +70,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
         <nav>	<!-- Navigation Start -->
             <ul>
-            	<li><a href="#top">HOME</a></li>
+            	<li><a href="index.html">HOME</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#work">Work</a></li>
                 <li><a href="#footer">Contact</a></li>
@@ -84,111 +82,91 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <hr/><!-- Horizontal Line -->
     
     
-    <header>	<!-- Header Title Start -->
-    	<h1>Hello there, I'm <span>&quot;Your Name&quot;</span>. Welcome to my design portfolio!</h1>
-        <h2>&ndash; Photographer and Web Developer &ndash;</h2>
-    </header>	<!-- Header Title End -->
-    <section id="slideshow">	<!-- Slideshow Start -->
-        <div class="html_carousel">
-			<div id="slider">
-            
-				<div class="slide">
-					<img src="resources/liquid/images/slideshow/sliderimage1.jpg" width="3000" height="783" alt="image 1"/><!-- Replace these images with your own but make sure they are 3000px wide and 783px high or the same ration -->
-				</div><!--/slide-->
-                
-				<div class="slide">
-					<img src="resources/liquid/images/slideshow/sliderimage2.jpg" width="3000" height="783" alt="image 2"/><!-- Replace these images with your own but make sure they are 3000px wide and 783px high or the same ration -->
-				</div><!--/slide-->
-                
-                <div class="slide">
-					<img src="resources/liquid/images/slideshow/sliderimage3.jpg" width="3000" height="783" alt="image 3"/><!-- Replace these images with your own but make sure they are 3000px wide and 783px high or the same ration -->
-				</div><!--/slide-->
-                
-			</div><!--/slider-->
-			<div class="clearfix"></div>
-		</div><!--/html_carousel-->
-    </section>	<!-- Slideshow End -->
+    <header><!-- Work Showcase Section Start -->
     
+    	<h1>Skies Of Spain</h1><!-- Title of project -->
+        <h2>photography</h2><!-- Category of project -->
+        <!-- Description of project start -->
+        <p>Spain has always been a favorite country of mine because of the absolutely stunning skies. I am mesmerized by the dazzling colours and it is one of my favorite places to take photos. Below are my three favorite photographs that I have taken of this glorious setting.</p>
+        <!-- Description of project end -->
+    </header>
     
-    <aside id="about" class=" left"> <!-- Text Section Start -->
-    	<h3>about me</h3><!-- Replace all text with what you want -->
-    	<p>Hey there, my name is &quot;Your Name&quot; and I am a photographer and web developer! This is my brand new portfolio. It's super cool because it's completely responsive! That means you can re-size it to whatever size you like and it always looks great. Have a look around and enjoy.</p>
-    </aside>
-    <aside class="right">
-    	<h3>my work</h3>
-    	<p>Below, you will be able to find lots of my work. I take loads of pretty pictures and I also make websites. If you like what you see then you can contact me below! Maybe you would like to hire me or just have a chat, either way, I look forward to hearing from you.</p>
-    </aside>
-    <div class="clearfix"></div> <!-- Text Section End -->
+    <section id="workbody"><!-- Project images start -->
+    	<img src="resources/liquid/images/work/SkiesOfSpain/sky1.JPG" alt="sky1"><!-- Use whatever images you like - they will automatically fit the width of the page -->
+        <h5>&ndash; Volcanic Skies</h5><!-- Image title -->
+        <img src="resources/liquid/images/work/SkiesOfSpain/sky2.JPG" alt="sky2"><!-- Use whatever images you like - they will automatically fit the width of the page -->
+        <h5>&ndash; Godly Light</h5><!-- Image title -->
+        <img src="resources/liquid/images/work/SkiesOfSpain/sky3.JPG" alt="sky3"><!-- Use whatever images you like - they will automatically fit the width of the page -->
+        <h5>&ndash; Pale Evening</h5><!-- Image title -->
+    </section><!-- Project images end -->
+    
+    <hr/>	<!-- Horizontal Line -->
+    
     
     
     <section id="work"> <!-- Work Links Section Start -->
     	<div class="item">
-        	<a href="work-template.jsp"><img src="resources/liquid/images/work/thumbs/item.png" alt="image 1"></a><!-- Image must be 400px by 300px -->
+        	<a href="work-template.html"><img src="resources/liquid/images/work/thumbs/item.png" alt="image 1"></a><!-- Image must be 400px by 300px -->
             <h3>Skies Of Spain</h3><!--Title-->
             <p>photography</p><!--Category-->
         </div><!--/item-->
         
         <div class="item">
-        	<a href="work-template.jsp"><img src="resources/liquid/images/work/thumbs/item2.png" alt="image 2"></a><!-- Image must be 400px by 300px -->
+        	<a href="work-template.html"><img src="resources/liquid/images/work/thumbs/item2.png" alt="image 2"></a><!-- Image must be 400px by 300px -->
         	<h3>Beautiful Bahrain</h3><!--Title-->
             <p>photography</p><!--Category-->
         </div><!--/item-->
         
         <div class="item">
-        	<a href="work-template.jsp"><img src="resources/liquid/images/work/thumbs/item3.png" alt="image 3"></a><!-- Image must be 400px by 300px -->
+        	<a href="work-template.html"><img src="resources/liquid/images/work/thumbs/item3.png" alt="image 3"></a><!-- Image must be 400px by 300px -->
         	<h3>Wild Stripes</h3><!--Title-->
             <p>photo manipulation</p><!--Category-->
         </div><!--/item-->
         
         <div class="item">
-        	<a href="work-template.jsp"><img src="resources/liquid/images/work/thumbs/item4.png" alt="image 4"></a><!-- Image must be 400px by 300px -->
+        	<a href="work-template.html"><img src="resources/liquid/images/work/thumbs/item4.png" alt="image 4"></a><!-- Image must be 400px by 300px -->
         	<h3>Lazy Days</h3><!--Title-->
             <p>photo manipulation</p><!--Category-->
         </div><!--/item-->
         
         <div class="item">
-        	<a href="work-template.jsp"><img src="resources/liquid/images/work/thumbs/item5.png" alt="image 5"></a><!-- Image must be 400px by 300px -->
+        	<a href="work-template.html"><img src="resources/liquid/images/work/thumbs/item5.png" alt="image 5"></a><!-- Image must be 400px by 300px -->
         	<h3>Trapped</h3><!--Title-->
             <p>photography</p><!--Category-->
         </div><!--/item-->
         
         	<div class="item">
-        	<a href="work-template.jsp"><img src="resources/liquid/images/work/thumbs/item6.png" alt="image 6"></a><!-- Image must be 400px by 300px -->
+        	<a href="work-template.html"><img src="resources/liquid/images/work/thumbs/item6.png" alt="image 6"></a><!-- Image must be 400px by 300px -->
             <h3>Quad-Core</h3><!--Title-->
             <p>photography</p><!--Category-->
         </div><!--/item-->
         
         <div class="item">
-        	<a href="work-template.jsp"><img src="resources/liquid/images/work/thumbs/item7.png" alt="image 7"></a><!-- Image must be 400px by 300px -->
+        	<a href="work-template.html"><img src="resources/liquid/images/work/thumbs/item7.png" alt="image 7"></a><!-- Image must be 400px by 300px -->
         	<h3>Retro Blast</h3><!--Title-->
             <p>illustration</p><!--Category-->
         </div><!--/item-->
         
         <div class="item">
-        	<a href="work-template.jsp"><img src="resources/liquid/images/work/thumbs/item8.png" alt="image 8"></a><!-- Image must be 400px by 300px -->
+        	<a href="work-template.html"><img src="resources/liquid/images/work/thumbs/item8.png" alt="image 8"></a><!-- Image must be 400px by 300px -->
         	<h3>Gates Of The Sun</h3><!--Title-->
             <p>photography</p><!--Category-->
         </div><!--/item-->
         
         <div class="item">
-        	<a href="work-template.jsp"><img src="resources/liquid/images/work/thumbs/item9.png" alt="image 9"></a><!-- Image must be 400px by 300px -->
+        	<a href="work-template.html"><img src="resources/liquid/images/work/thumbs/item9.png" alt="image 9"></a><!-- Image must be 400px by 300px -->
         	<h3>Winter Touch</h3><!--Title-->
             <p>photography</p><!--Category-->
         </div><!--/item-->
         
          <div class="item">
-        	<a href="work-template.jsp"><img src="resources/liquid/images/work/thumbs/item10.png" alt="image 10"></a><!-- Image must be 400px by 300px -->
+        	<a href="work-template.html"><img src="resources/liquid/images/work/thumbs/item10.png" alt="image 10"></a><!-- Image must be 400px by 300px -->
         	<h3>Burn</h3><!--Title-->
             <p>photo manipulation</p><!--Category-->
         </div><!--/item-->
         
         <div class="clearfix"></div>
     </section> <!-- Work Links Section End -->
-    
-    
-    <section id="bottom"> <!-- Last Words Section Start -->
-    	<h3>Thanks for looking at my new website!</h3>
-    </section><!-- Last Words Section End-->
 </div>
 
 <!-- TO MAKE THE PHP FORM WORK, ALL YOU NEED TO DO IS OPEN UP THE FILE CALLED 'submitemail.php' AND CHANGE WHERE IT SAYS 'your email goes here' -->
@@ -217,8 +195,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <a href="http://youtube.com"><img class="icon" src="resources/liquid/images/icons/youtube.png" width="32" height="32" alt="youtube"></a><!-- Replace with any 32px x 32px icons -->
         <a href="http://facebook.com"><img class="icon" src="resources/liquid/images/icons/facebook.png" width="32" height="32" alt="facebook"></a><!-- Replace with any 32px x 32px icons -->
         <a href="http://twitter.com"><img class="icon" src="resources/liquid/images/icons/twitter.png" width="32" height="32" alt="twitter"></a><!-- Replace with any 32px x 32px icons -->
-        </section> <!-- Social Icons End -->
-        <p>lets get social - </p>
         </section> <!-- Social Icons End -->
     </div>
     <div class="clearfix"></div>
