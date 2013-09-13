@@ -1,6 +1,5 @@
 package me.tspace.finance.category.dao;
 
-import me.tspace.finance.category.model.MoneyCategory;
 import me.tspace.finance.category.pojo.MoneyCategory;
 
 public interface MoneyCategoryMapper {
