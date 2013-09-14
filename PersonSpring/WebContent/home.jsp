@@ -1,42 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
-<%  
-String path = request.getContextPath();  
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";  
-%>  
+<%@ include file="/WEB-INF/views/commons/taglibs.jsp"%>
 
 <!DOCTYPE HTML>
-
-
-<!-- ............................. -->
-<!-- ............................. -->
-<!-- ..... LIQUID GEM V.1.0. ..... -->
-<!-- ............................. -->
-<!-- ............................. -->
-
-<!-- ............................. -->
-<!-- ............................. -->
-<!-- .... MADE BY CHRIS BIRON .... -->
-<!-- ............................. -->
-<!-- ............................. -->
-
-<!-- ............................. -->
-<!-- ............................. -->
-<!-- Liquid Gem is licensed under 
-          Creative Commons 
- Attribution-NonCommercial-ShareAlike
-       3.0 Unported License -->
-<!-- ............................. -->
-<!-- ............................. -->
-
-
-
 <!-- DON'T TOUCH THIS SECTION -->
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
-<base href="<%=basePath%>">  
+
 <!--[if lt IE 9]>
 <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -52,37 +23,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!-- END OF Website description -->
 
 <!-- DON'T TOUCH THIS SECTION -->
-<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700|Cookie' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="resources/liquid/css/style.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script src="resources/liquid/scripts/jquery.carouFredSel-5.5.2.js" type="text/javascript"></script>
-<script type="text/javascript" src="resources/liquid/scripts/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="resources/liquid/scripts/jquery.form.js"></script> 
-<script type="text/javascript" src="resources/liquid/scripts/cripts.js"></script> 
+<%@include  file = "/WEB-INF/views/commons/jscss.jsp" %>
 </head>
 <!-- END OF DON'T TOUCH -->
 
 <body>
 <div class="wrapper">
-	<div id="top">
-        <div id="logo">
-            <img id="logoimage" src="resources/liquid/images/logo.png" alt="logo">	<!-- Logo image -->
-            <h1 id="logotitle">liquid gem</h1>	<!-- Logo text -->
-        </div><!--/logo-->
-    
-        <nav>	<!-- Navigation Start -->
-            <ul>
-            	<li><a href="#top">HOME</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#work">Work</a></li>
-                <li><a href="#footer">Contact</a></li>
-            </ul>      
-        </nav>	<!-- Navigation End -->
-    </div><!--/top-->
-    
-    
-    <hr/><!-- Horizontal Line -->
-    
+	<!-- top -->
+	<%@include file="navigation.jsp" %>
+    <!-- top -->
     
     <header>	<!-- Header Title Start -->
     	<h1>Hello there, I'm <span>&quot;Your Name&quot;</span>. Welcome to my design portfolio!</h1>
@@ -193,36 +142,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <!-- TO MAKE THE PHP FORM WORK, ALL YOU NEED TO DO IS OPEN UP THE FILE CALLED 'submitemail.php' AND CHANGE WHERE IT SAYS 'your email goes here' -->
 
-<!-- DON'T TOUCH THIS SECTION -->
-
-<footer id="footer">
-	<div class="wrapper">
-    	<section class="left">
-    	<h4>Contact</h4>
-            <div id="formwrap">
-                <form method="post" id="submitform" action="submitemail.php" >
-                            <input type="text" class="formstyle" title="Name" name="name" />
-                            <input type="text" class="formstyle" title="Email" name="email" />
-                            <textarea name="message" title="Message"></textarea>
-                            <input class="formstyletwo" type="submit" value="Send">  
-                </form>
-            </div>
-            <div id="error"></div>
-        </section>
-
-<!-- DON'T TOUCH THIS SECTION END -->        
-        
-    	<section class="right social"> <!-- Social Icons Start -->
-		<a href="http://plus.google.co.uk"><img class="icon" src="resources/liquid/images/icons/google.png" width="32" height="32" alt="google"></a><!-- Replace with any 32px x 32px icons -->
-        <a href="http://youtube.com"><img class="icon" src="resources/liquid/images/icons/youtube.png" width="32" height="32" alt="youtube"></a><!-- Replace with any 32px x 32px icons -->
-        <a href="http://facebook.com"><img class="icon" src="resources/liquid/images/icons/facebook.png" width="32" height="32" alt="facebook"></a><!-- Replace with any 32px x 32px icons -->
-        <a href="http://twitter.com"><img class="icon" src="resources/liquid/images/icons/twitter.png" width="32" height="32" alt="twitter"></a><!-- Replace with any 32px x 32px icons -->
-        </section> <!-- Social Icons End -->
-        <p>lets get social - </p>
-        </section> <!-- Social Icons End -->
-    </div>
-    <div class="clearfix"></div>
-</footer>
+<!-- footer -->
+<%-- 
+<%@include file = "/footer.jsp" %>
+  --%>
+<!-- footer -->
 
 <!-- SLIDESHOW SCRIPT START -->
 <script type="text/javascript">
