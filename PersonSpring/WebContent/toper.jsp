@@ -9,7 +9,7 @@
     
         <nav>	<!-- Navigation Start -->
             <ul>
-            	<li><a href="home.jsp">首页</a></li>
+            	<li><a href="finance/home">首页</a></li>
                 <li><a href="finance/income">收入</a></li>
                 <li><a href="finance/spend">支出</a></li>
                 <li><a href="finance/regular">固定</a></li>

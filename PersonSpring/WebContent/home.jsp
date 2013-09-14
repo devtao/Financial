@@ -34,7 +34,7 @@
     <!-- top -->
     
     <header>	<!-- Header Title Start -->
-    	<h1>Hello there, I'm <span>&quot;Your Name&quot;</span>. Welcome to my design portfolio!</h1>
+    	<h1>Hello there, I'm <span>&quot;Da T&quot;</span>. Welcome to my design portfolio!</h1>
         <h2>&ndash; Photographer and Web Developer &ndash;</h2>
     </header>	<!-- Header Title End -->
     <section id="slideshow">	<!-- Slideshow Start -->
@@ -61,7 +61,7 @@
     
     <aside id="about" class=" left"> <!-- Text Section Start -->
     	<h3>about me</h3><!-- Replace all text with what you want -->
-    	<p>Hey there, my name is &quot;Your Name&quot; and I am a photographer and web developer! This is my brand new portfolio. It's super cool because it's completely responsive! That means you can re-size it to whatever size you like and it always looks great. Have a look around and enjoy.</p>
+    	<p>Hey there, my name is &quot;Da T&quot; and I am a photographer and web developer! This is my brand new portfolio. It's super cool because it's completely responsive! That means you can re-size it to whatever size you like and it always looks great. Have a look around and enjoy.</p>
     </aside>
     <aside class="right">
     	<h3>my work</h3>
