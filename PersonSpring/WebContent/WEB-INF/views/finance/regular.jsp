@@ -30,7 +30,7 @@
 <body>
 <div class="wrapper">
 	<!-- top -->
-	<%@include file="/navigation.jsp" %>
+	<%@include file="/toper.jsp" %>
     <!-- top -->
     
     	<h1>固定收入</h1>
