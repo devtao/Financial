@@ -39,24 +39,31 @@
    
    <!-- content --> 
     <form id="incomeForm">
-
-  <!-- TAB -->
     <!-- Text -->
     <div><label>Username:</label><input type="text" name="username"/></div>
     <div><label>Date:</label><input type="text" name="date" class="datepicker" placeholder="mm/dd/yy"/></div>
     <div><label>Comments:</label><textarea name="comments"></textarea></div>
 
+	  <!-- Select -->
+    <div>
+      <label>Colors:</label>
+      <select name="colors">
+          <option value="default">Choose a color</option>
+          <option value="Red">Red</option>
+          <option value="Blue">Blue</option>
+          <option value="Green">Green</option>
+      </select>
+    </div>
   <!-- Separator -->
   <div><hr/></div>
-
   <!-- Buttons -->
   <div>
     <button type="submit">Submit</button>
     <button id="reset" type="button">Reset</button>
   </div>
-
 </form>
     <!-- content -->
+    
     <section id="bottom"> <!-- Last Words Section Start -->
     	<h3>Thanks for looking at my new website!</h3>
     </section><!-- Last Words Section End-->
@@ -70,6 +77,7 @@
   --%> 
 <!-- footer -->
 
+<script src="http://code.jquery.com/ui/1.9.0/jquery-ui.min.js"></script>
 <script src="resources/idealform/js/min/jquery.idealforms.js"></script>
 <script >
 var options = {
@@ -79,9 +87,6 @@ var options = {
 	    },
 
 	    inputs: {
-	      'password': {
-	        filters: 'required pass',
-	      },
 	      'username': {
 	        filters: 'required username',
 	        data: {
