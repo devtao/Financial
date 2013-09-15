@@ -23,7 +23,11 @@
 <!-- END OF Website description -->
 
 <!-- DON'T TOUCH THIS SECTION -->
+
 <%@include  file = "/WEB-INF/views/commons/jscss.jsp" %>
+<link href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" rel="stylesheet"/>
+<link href="resources/idealform/css/jquery.idealforms.min.css" rel="stylesheet" media="screen"/>
+
 </head>
 <!-- END OF DON'T TOUCH -->
 
@@ -32,9 +36,27 @@
 	<!-- top -->
 	<%@include file="/toper.jsp" %>
     <!-- top -->
-    
-    	<h1>收入</h1>
-    
+   
+   <!-- content --> 
+    <form id="incomeForm">
+
+  <!-- TAB -->
+    <!-- Text -->
+    <div><label>Username:</label><input type="text" name="username"/></div>
+    <div><label>Date:</label><input type="text" name="date" class="datepicker" placeholder="mm/dd/yy"/></div>
+    <div><label>Comments:</label><textarea name="comments"></textarea></div>
+
+  <!-- Separator -->
+  <div><hr/></div>
+
+  <!-- Buttons -->
+  <div>
+    <button type="submit">Submit</button>
+    <button id="reset" type="button">Reset</button>
+  </div>
+
+</form>
+    <!-- content -->
     <section id="bottom"> <!-- Last Words Section Start -->
     	<h3>Thanks for looking at my new website!</h3>
     </section><!-- Last Words Section End-->
@@ -45,8 +67,33 @@
 <!-- footer -->
 <%-- 
 <%@include file = "footer.jsp" %>
-  --%>
+  --%> 
 <!-- footer -->
+
+<script src="resources/idealform/js/min/jquery.idealforms.js"></script>
+<script >
+var options = {
+
+	    onFail: function() {
+	      alert( $myform.getInvalid().length +' invalid fields.' )
+	    },
+
+	    inputs: {
+	      'password': {
+	        filters: 'required pass',
+	      },
+	      'username': {
+	        filters: 'required username',
+	        data: {
+	          //ajax: { url:'validate.php' }
+	        }
+	      }
+	    }
+	  };
+
+  var $myform = $('#incomeForm').idealforms(options).data('idealforms');
+</script>
+
 
 <!-- SLIDESHOW SCRIPT START -->
 <script type="text/javascript">
