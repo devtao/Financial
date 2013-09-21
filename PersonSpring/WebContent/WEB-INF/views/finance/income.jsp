@@ -54,6 +54,7 @@
           <option value="Green">Green</option>
       </select>
     </div>
+     <div><label>Username:</label><input type="text" name="username"/></div>
   <!-- Separator -->
   <div><hr/></div>
   <!-- Buttons -->
