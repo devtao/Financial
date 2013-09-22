@@ -16,3 +16,4 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="resources/liquid/scripts/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="resources/liquid/scripts/jquery.form.js"></script> 
 <script type="text/javascript" src="resources/liquid/scripts/cripts.js"></script> 
+<script type="text/javascript" src="resources/js/utiljs.js"></script> 

@@ -108,4 +108,12 @@
       name = #{name,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  <select id="selectCategoryByType" parameterType="java.lang.String" resultMap="hashmap">
+    select 
+    id,name
+    from t_money_category
+    where category_type = #{type,jdbcType=VARCHAR}
+  </select>
+  
 </mapper>

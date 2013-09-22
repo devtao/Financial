@@ -1,4 +1,4 @@
-package test.me.tspace.account.dao;
+package test.me.tspace.finance;
 
 import org.apache.log4j.PropertyConfigurator;
 import org.junit.BeforeClass;
@@ -10,7 +10,7 @@ import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 
-@ContextConfiguration(locations = "classpath:config/spring/springMVC.xml")   
+@ContextConfiguration(locations = "classpath:config/spring/spring-common.xml")   
 @RunWith(SpringJUnit4ClassRunner.class)   
 @Transactional  
 @TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = true) 

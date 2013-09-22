@@ -27,6 +27,8 @@
 <%@include  file = "/WEB-INF/views/commons/jscss.jsp" %>
 <link href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" rel="stylesheet"/>
 <link href="resources/idealform/css/jquery.idealforms.min.css" rel="stylesheet" media="screen"/>
+<script src="http://code.jquery.com/ui/1.9.0/jquery-ui.min.js"></script>
+<script src="resources/idealform/js/min/jquery.idealforms.js"></script>
 
 </head>
 <!-- END OF DON'T TOUCH -->
@@ -39,28 +41,27 @@
    
    <!-- content --> 
     <form id="incomeForm">
-    <!-- Text -->
-    <div><label>Username:</label><input type="text" name="username"/></div>
-    <div><label>Date:</label><input type="text" name="date" class="datepicker" placeholder="mm/dd/yy"/></div>
-    <div><label>Comments:</label><textarea name="comments"></textarea></div>
-
-	  <!-- Select -->
+    <div><label>金额:</label><input type="number" id="amount" name="amount"/></div>
+      <!-- Select -->
     <div>
-      <label>Colors:</label>
-      <select name="colors">
-          <option value="default">Choose a color</option>
+      <label>收入类别:</label>
+      <select name="category">
+          <option value="default">选择类别</option>
           <option value="Red">Red</option>
           <option value="Blue">Blue</option>
           <option value="Green">Green</option>
       </select>
     </div>
-     <div><label>Username:</label><input type="text" name="username"/></div>
+    <!-- Text -->
+    <div><label>记账日期:</label><input type="text" id = "addDate" name="addDate" class="datepicker" placeholder="mm/dd/yy"/></div>
+    <div><label>备注:</label><textarea name="comments"></textarea></div>
+
   <!-- Separator -->
   <div><hr/></div>
   <!-- Buttons -->
   <div>
-    <button type="submit">Submit</button>
-    <button id="reset" type="button">Reset</button>
+    <button type="submit">确认</button>
+    <button id="reset" type="button">重置</button>
   </div>
 </form>
     <!-- content -->
@@ -78,9 +79,11 @@
   --%> 
 <!-- footer -->
 
-<script src="http://code.jquery.com/ui/1.9.0/jquery-ui.min.js"></script>
-<script src="resources/idealform/js/min/jquery.idealforms.js"></script>
+
 <script >
+//设置默认日期为当前日期
+$('#addDate').val((new Date()).format('mm/dd/yyyy'));
+
 var options = {
 
 	    onFail: function() {
@@ -88,12 +91,10 @@ var options = {
 	    },
 
 	    inputs: {
-	      'username': {
-	        filters: 'required username',
-	        data: {
-	          //ajax: { url:'validate.php' }
-	        }
-	      }
+	    	'amount': {
+	    		  filters: 'required number range',
+	    		  data: { range: [ 1, 100000] }
+	    	}
 	    }
 	  };
 

@@ -1,7 +1,13 @@
 package me.tspace.finance.category.dao;
 
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.stereotype.Repository;
+
 import me.tspace.finance.category.pojo.MoneyCategory;
 
+@Repository
 public interface MoneyCategoryMapper {
 
 	/**
@@ -39,4 +45,7 @@ public interface MoneyCategoryMapper {
 	 * @mbggenerated  Thu Sep 12 23:00:05 CST 2013
 	 */
 	int updateByPrimaryKey(MoneyCategory record);
+	
+	List<Map> selectCategoryByType(String type);
+	
 }

@@ -23,9 +23,7 @@
     </typeAliases>
       
     <mappers>  
-<!--         <mapper resource="sqlmap/account/UserDaoMapperTest.xml" />  
-        <mapper resource="sqlmap/account/LoginMapper.xml" />  
-        <mapper resource="sqlmap/account/UserMapper.xml" />   -->
+      <mapper resource="sqlmap/finance/category/MoneyCategoryMapper.xml" />  
     </mappers>  
     
 </configuration>

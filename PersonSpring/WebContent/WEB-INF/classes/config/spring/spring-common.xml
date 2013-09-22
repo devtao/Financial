@@ -37,7 +37,7 @@
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="proxool" />
 		<property name="configLocation" value="classpath:/config/mybatis/mybatisConfig.xml" />
-		<property name="typeAliasesPackage" value="me.tspace.*.model" />
+		<property name="typeAliasesPackage" value="me.tspace.*.pojo" />
 		<!-- <property name="mapperLocations" value="classpath:/sqlmap/*Mapper.xml" /> -->
 	</bean>
 
