@@ -1,5 +1,6 @@
 package me.tspace.finance.category.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -17,14 +18,14 @@ public class CategoryServiceImpl implements ICategoryService {
 	MoneyCategoryMapper categoryMapper;
 
 	@Override
-	public List<Map> getIncomeCategory() {
-		List<Map> categorys = categoryMapper.selectCategoryByType("收入");
+	public List<HashMap> getIncomeCategory() {
+		List<HashMap> categorys = categoryMapper.selectCategoryByType("收入");
 		return categorys;
 	}
 
 	@Override
-	public List<Map> getOutcomeCategory() {
-		List<Map> categorys =  categoryMapper.selectCategoryByType("支出");
+	public List<HashMap> getOutcomeCategory() {
+		List<HashMap> categorys =  categoryMapper.selectCategoryByType("支出");
 		return categorys;
 	}
 

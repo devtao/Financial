@@ -1,7 +1,7 @@
 package me.tspace.finance.category.dao;
 
+import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
@@ -46,6 +46,6 @@ public interface MoneyCategoryMapper {
 	 */
 	int updateByPrimaryKey(MoneyCategory record);
 	
-	List<Map> selectCategoryByType(String type);
+	List<HashMap> selectCategoryByType(String type);
 	
 }

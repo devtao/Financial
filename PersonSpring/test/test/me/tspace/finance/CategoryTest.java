@@ -1,5 +1,6 @@
 package test.me.tspace.finance;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -22,10 +23,10 @@ public class CategoryTest extends AbstractTestCase {
 	@Test
 	public void testGetIncome(){
 		 @SuppressWarnings("rawtypes")
-		List<Map>categorys = categoryService.getIncomeCategory();
-		 for(Map maps :categorys){
+		List<HashMap>categorys = categoryService.getIncomeCategory();
+		 for(@SuppressWarnings("rawtypes") HashMap maps :categorys){
 			 for(Object o:maps.keySet()){
-				 System.out.println(o+":"+maps.get(o));
+				 System.out.println("####################"+o+":"+maps.get(o));
 			 }
 		 }
 	}
