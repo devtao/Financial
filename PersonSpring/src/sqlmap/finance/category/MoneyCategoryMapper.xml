@@ -109,7 +109,7 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   
-  <select id="selectCategoryByType" parameterType="java.lang.String" resultType="hashmap">
+  <select id="selectCategoryByType" parameterType="java.lang.String" resultType="java.util.HashMap">
     select 
     id,name
     from t_money_category
