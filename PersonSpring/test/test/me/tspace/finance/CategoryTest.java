@@ -27,7 +27,6 @@ public class CategoryTest extends AbstractTestCase {
 	
 	@Test
 	public void testGetIncome(){
-		MoneyCategory cate = categoryMapper.selectByPrimaryKey(1);
 		List<HashMap> categorys = categoryMapper.selectCategoryByType("收入");
 		 @SuppressWarnings("rawtypes")
 		List<HashMap>categoryss = categoryService.getIncomeCategory();
