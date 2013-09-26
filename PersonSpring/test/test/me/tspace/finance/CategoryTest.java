@@ -31,12 +31,8 @@ public class CategoryTest extends AbstractTestCase {
 		 @SuppressWarnings("rawtypes")
 		List<HashMap>categoryss = categoryService.getIncomeCategory();
 		 for(@SuppressWarnings("rawtypes") HashMap maps :categorys){
-			 for(Object o:maps.keySet()){
-				 System.out.println("####################"+o+":"+maps.get(o));
-			 }
+				 System.out.println("#################### ID"+maps.get("id")+"  name:  "+maps.get("name"));
 		 }
 	}
-	
-	
 	
 }
